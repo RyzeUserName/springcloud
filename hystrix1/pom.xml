@@ -21,7 +21,7 @@
     </properties>
     <modules>
         <module>server</module>
-        <module>client</module>
+        <module>client-service</module>
     </modules>
     <dependencies>
         <dependency>

@@ -2,7 +2,7 @@ server:
   port: 8011
 spring:
   application:
-    name: client
+    name: client-service
 eureka:
   client:
     service-url:

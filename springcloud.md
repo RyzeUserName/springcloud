@@ -692,7 +692,45 @@ client:
 
 ![1552990503932](.\assets\1552990503932.png)
 
+​	LoadBalancerClient 继承自 ServiceInstanceChooser 继承了 choose 选择服务实例 以及各种执行
+
+![1553052583233](.\assets\1553052583233.png)
+
+​	同级目录下 LoadBalancerAutoConfiguration.class
+
+![1553053699985](.\assets\1553053699985.png)
+
+​	loadBalancerClient  生成 LoadBalancerRequestFactory
+
+​	LoadBalancerRequestFactory + loadBalancerClient 生成 LoadBalancerInterceptor
+
+​	LoadBalancerInterceptor 最终 被绑定到 restTemplate 上
+
+​	LoadBalancerInterceptor 
+
+​	![1553053828083](.\assets\1553053828083.png)
+
+​	调用loadBalancerClient   的excute
+
+​	![1553054395342](.\assets\1553054395342.png)
+
+​	![1553054410540](.\assets\1553054410540.png)
+
+![1553054474983](.\assets\1553054474983.png)
+
+
+
 ## 	4.Hystrix
+
+### 	1.概述
+
+​		Hystrix 是一个延迟和容错库，旨在隔离远程系统、服务和第三方库，组织级联故障，在负载的分布式系统中实
+
+​	现恢复能力，迅速失败和快速恢复，在合理情况下回退和优雅降级，开启近实时监控 告警和操作控制
+
+### 	2.实战
+
+​		
 
 ## 	5.Zuul
 

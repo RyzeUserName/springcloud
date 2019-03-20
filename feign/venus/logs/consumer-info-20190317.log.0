@@ -1,0 +1,758 @@
+2019-03-17 22:18:45.736 [main] INFO  o.s.c.a.AnnotationConfigApplicationContext -Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@4351c8c3: startup date [Sun Mar 17 22:18:45 CST 2019]; root of context hierarchy
+2019-03-17 22:18:45.870 [main] INFO  o.s.b.f.a.AutowiredAnnotationBeanPostProcessor -JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2019-03-17 22:18:45.901 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker -Bean 'configurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$f07945a9] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-03-17 22:18:47.524 [main] INFO  com.lft.consumer.ConsumerApplication -No active profile set, falling back to default profiles: default
+2019-03-17 22:18:47.533 [main] INFO  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext -Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@7c2327fa: startup date [Sun Mar 17 22:18:47 CST 2019]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@4351c8c3
+2019-03-17 22:18:47.965 [main] INFO  o.s.b.f.s.DefaultListableBeanFactory -Overriding bean definition for bean 'feignRequestInterceptor' with a different definition: replacing [Generic bean: class [com.lft.consumer.config.FeignRequestInterceptor]; scope=singleton; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [E:\study\springcloud\eureka-3\venus\consumer\target\classes\com\lft\consumer\config\FeignRequestInterceptor.class]] with [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=cn.springcloud.feign.VenusFeignAutoConfig; factoryMethodName=feignRequestInterceptor; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [cn/springcloud/feign/VenusFeignAutoConfig.class]]
+2019-03-17 22:18:48.273 [main] INFO  o.s.cloud.context.scope.GenericScope -BeanFactory id=4e232c20-a739-30b9-9f0f-5ee2552b15d1
+2019-03-17 22:18:48.287 [main] INFO  o.s.b.f.a.AutowiredAnnotationBeanPostProcessor -JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2019-03-17 22:18:48.368 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker -Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$f07945a9] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-03-17 22:18:48.563 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer -Tomcat initialized with port(s): 8011 (http)
+2019-03-17 22:18:48.572 [main] INFO  o.a.coyote.http11.Http11NioProtocol -Initializing ProtocolHandler ["http-nio-8011"]
+2019-03-17 22:18:48.579 [main] INFO  o.a.catalina.core.StandardService -Starting service [Tomcat]
+2019-03-17 22:18:48.580 [main] INFO  o.a.catalina.core.StandardEngine -Starting Servlet Engine: Apache Tomcat/8.5.31
+2019-03-17 22:18:48.583 [localhost-startStop-1] INFO  o.a.c.core.AprLifecycleListener -The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [D:\jdk\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;D:\jdk\bin;D:\jdk\jre\bin;D:\maven\bin;D:\git\Git\cmd;C:\Users\Ryze\AppData\Local\Microsoft\WindowsApps;;.]
+2019-03-17 22:18:48.697 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] -Initializing Spring embedded WebApplicationContext
+2019-03-17 22:18:48.697 [localhost-startStop-1] INFO  o.s.web.context.ContextLoader -Root WebApplicationContext: initialization completed in 1164 ms
+2019-03-17 22:18:48.948 [localhost-startStop-1] WARN  c.n.c.sources.URLConfigurationSource -No URLs will be polled as dynamic configuration sources.
+2019-03-17 22:18:48.949 [localhost-startStop-1] INFO  c.n.c.sources.URLConfigurationSource -To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2019-03-17 22:18:48.956 [localhost-startStop-1] INFO  c.n.config.DynamicPropertyFactory -DynamicPropertyFactory is initialized with configuration sources: com.netflix.config.ConcurrentCompositeConfiguration@2eb86931
+2019-03-17 22:18:50.269 [localhost-startStop-1] INFO  o.s.cloud.commons.util.InetUtils -Cannot determine local hostname
+2019-03-17 22:18:51.439 [localhost-startStop-1] INFO  o.s.cloud.commons.util.InetUtils -Cannot determine local hostname
+2019-03-17 22:18:51.772 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean -Servlet dispatcherServlet mapped to [/]
+2019-03-17 22:18:51.776 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean -Mapping filter: 'characterEncodingFilter' to: [/*]
+2019-03-17 22:18:51.776 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean -Mapping filter: 'httpTraceFilter' to: [/*]
+2019-03-17 22:18:51.776 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean -Mapping filter: 'webMvcMetricsFilter' to: [/*]
+2019-03-17 22:18:51.997 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter -Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@7c2327fa: startup date [Sun Mar 17 22:18:47 CST 2019]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@4351c8c3
+2019-03-17 22:18:52.116 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext -Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userController': Unsatisfied dependency expressed through field 'userService'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.lft.providerclient.service.UserService' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2019-03-17 22:18:52.118 [main] WARN  o.s.b.f.s.DisposableBeanAdapter -Invocation of destroy method 'close' failed on bean with name 'eurekaRegistration': org.springframework.beans.factory.BeanCreationNotAllowedException: Error creating bean with name 'org.springframework.cloud.netflix.eureka.EurekaClientAutoConfiguration$RefreshableEurekaClientConfiguration': Singleton bean creation not allowed while singletons of this factory are in destruction (Do not request a bean from a BeanFactory in a destroy method implementation!)
+2019-03-17 22:18:52.119 [main] INFO  o.a.catalina.core.StandardService -Stopping service [Tomcat]
+2019-03-17 22:18:52.124 [localhost-startStop-1] WARN  o.a.c.loader.WebappClassLoaderBase -The web application [ROOT] appears to have started a thread named [spring.cloud.inetutils] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.net.Inet6AddressImpl.getHostByAddr(Native Method)
+ java.net.InetAddress$2.getHostByAddr(InetAddress.java:933)
+ java.net.InetAddress.getHostFromNameService(InetAddress.java:618)
+ java.net.InetAddress.getHostName(InetAddress.java:560)
+ java.net.InetAddress.getHostName(InetAddress.java:532)
+ org.springframework.cloud.commons.util.InetUtils$$Lambda$61/1449772539.call(Unknown Source)
+ java.util.concurrent.FutureTask.run$$$capture(FutureTask.java:266)
+ java.util.concurrent.FutureTask.run(FutureTask.java)
+ java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+ java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+ java.lang.Thread.run(Thread.java:748)
+2019-03-17 22:18:52.133 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener -
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2019-03-17 22:18:52.260 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter -
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field userService in com.lft.consumer.controller.UserController required a bean of type 'com.lft.providerclient.service.UserService' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'com.lft.providerclient.service.UserService' in your configuration.
+
+2019-03-17 22:21:30.685 [main] INFO  o.s.c.a.AnnotationConfigApplicationContext -Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@1c3146bc: startup date [Sun Mar 17 22:21:30 CST 2019]; root of context hierarchy
+2019-03-17 22:21:30.825 [main] INFO  o.s.b.f.a.AutowiredAnnotationBeanPostProcessor -JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2019-03-17 22:21:30.857 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker -Bean 'configurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$d31f902d] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-03-17 22:21:32.117 [main] INFO  com.lft.consumer.ConsumerApplication -No active profile set, falling back to default profiles: default
+2019-03-17 22:21:32.133 [main] INFO  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext -Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@4d6f197e: startup date [Sun Mar 17 22:21:32 CST 2019]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@1c3146bc
+2019-03-17 22:21:32.856 [main] INFO  o.s.cloud.context.scope.GenericScope -BeanFactory id=4e232c20-a739-30b9-9f0f-5ee2552b15d1
+2019-03-17 22:21:32.873 [main] INFO  o.s.b.f.a.AutowiredAnnotationBeanPostProcessor -JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2019-03-17 22:21:32.951 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker -Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$d31f902d] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-03-17 22:21:33.154 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer -Tomcat initialized with port(s): 8011 (http)
+2019-03-17 22:21:33.154 [main] INFO  o.a.coyote.http11.Http11NioProtocol -Initializing ProtocolHandler ["http-nio-8011"]
+2019-03-17 22:21:33.169 [main] INFO  o.a.catalina.core.StandardService -Starting service [Tomcat]
+2019-03-17 22:21:33.169 [main] INFO  o.a.catalina.core.StandardEngine -Starting Servlet Engine: Apache Tomcat/8.5.31
+2019-03-17 22:21:33.169 [localhost-startStop-1] INFO  o.a.c.core.AprLifecycleListener -The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [D:\jdk\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;D:\jdk\bin;D:\jdk\jre\bin;D:\maven\bin;D:\git\Git\cmd;C:\Users\Ryze\AppData\Local\Microsoft\WindowsApps;;.]
+2019-03-17 22:21:33.279 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] -Initializing Spring embedded WebApplicationContext
+2019-03-17 22:21:33.279 [localhost-startStop-1] INFO  o.s.web.context.ContextLoader -Root WebApplicationContext: initialization completed in 1146 ms
+2019-03-17 22:21:33.482 [localhost-startStop-1] WARN  c.n.c.sources.URLConfigurationSource -No URLs will be polled as dynamic configuration sources.
+2019-03-17 22:21:33.482 [localhost-startStop-1] INFO  c.n.c.sources.URLConfigurationSource -To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2019-03-17 22:21:33.544 [localhost-startStop-1] INFO  c.n.config.DynamicPropertyFactory -DynamicPropertyFactory is initialized with configuration sources: com.netflix.config.ConcurrentCompositeConfiguration@4e88de66
+2019-03-17 22:21:34.874 [localhost-startStop-1] INFO  o.s.cloud.commons.util.InetUtils -Cannot determine local hostname
+2019-03-17 22:21:36.046 [localhost-startStop-1] INFO  o.s.cloud.commons.util.InetUtils -Cannot determine local hostname
+2019-03-17 22:21:36.359 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean -Servlet dispatcherServlet mapped to [/]
+2019-03-17 22:21:36.375 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean -Mapping filter: 'characterEncodingFilter' to: [/*]
+2019-03-17 22:21:36.375 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean -Mapping filter: 'httpTraceFilter' to: [/*]
+2019-03-17 22:21:36.375 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean -Mapping filter: 'webMvcMetricsFilter' to: [/*]
+2019-03-17 22:21:36.406 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext -Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userController': Unsatisfied dependency expressed through field 'userService'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.lft.providerclient.service.UserService' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2019-03-17 22:21:36.406 [main] WARN  o.s.b.f.s.DisposableBeanAdapter -Invocation of destroy method 'close' failed on bean with name 'eurekaRegistration': org.springframework.beans.factory.BeanCreationNotAllowedException: Error creating bean with name 'org.springframework.cloud.netflix.eureka.EurekaClientAutoConfiguration$RefreshableEurekaClientConfiguration': Singleton bean creation not allowed while singletons of this factory are in destruction (Do not request a bean from a BeanFactory in a destroy method implementation!)
+2019-03-17 22:21:36.406 [main] INFO  o.a.catalina.core.StandardService -Stopping service [Tomcat]
+2019-03-17 22:21:36.406 [localhost-startStop-1] WARN  o.a.c.loader.WebappClassLoaderBase -The web application [ROOT] appears to have started a thread named [spring.cloud.inetutils] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.net.Inet6AddressImpl.getHostByAddr(Native Method)
+ java.net.InetAddress$2.getHostByAddr(InetAddress.java:933)
+ java.net.InetAddress.getHostFromNameService(InetAddress.java:618)
+ java.net.InetAddress.getHostName(InetAddress.java:560)
+ java.net.InetAddress.getHostName(InetAddress.java:532)
+ org.springframework.cloud.commons.util.InetUtils$$Lambda$61/267814113.call(Unknown Source)
+ java.util.concurrent.FutureTask.run$$$capture(FutureTask.java:266)
+ java.util.concurrent.FutureTask.run(FutureTask.java)
+ java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+ java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+ java.lang.Thread.run(Thread.java:748)
+2019-03-17 22:21:36.422 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener -
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2019-03-17 22:21:36.548 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter -
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field userService in com.lft.consumer.controller.UserController required a bean of type 'com.lft.providerclient.service.UserService' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'com.lft.providerclient.service.UserService' in your configuration.
+
+2019-03-17 22:23:22.717 [main] INFO  o.s.c.a.AnnotationConfigApplicationContext -Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@55342f40: startup date [Sun Mar 17 22:23:22 CST 2019]; root of context hierarchy
+2019-03-17 22:23:22.857 [main] INFO  o.s.b.f.a.AutowiredAnnotationBeanPostProcessor -JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2019-03-17 22:23:22.888 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker -Bean 'configurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$ab315a27] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-03-17 22:23:24.153 [main] INFO  com.lft.consumer.ConsumerApplication -No active profile set, falling back to default profiles: default
+2019-03-17 22:23:24.169 [main] INFO  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext -Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@1ee29c84: startup date [Sun Mar 17 22:23:24 CST 2019]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@55342f40
+2019-03-17 22:23:24.957 [main] INFO  o.s.cloud.context.scope.GenericScope -BeanFactory id=4e232c20-a739-30b9-9f0f-5ee2552b15d1
+2019-03-17 22:23:24.972 [main] INFO  o.s.b.f.a.AutowiredAnnotationBeanPostProcessor -JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2019-03-17 22:23:25.051 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker -Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$ab315a27] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-03-17 22:23:25.254 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer -Tomcat initialized with port(s): 8011 (http)
+2019-03-17 22:23:25.254 [main] INFO  o.a.coyote.http11.Http11NioProtocol -Initializing ProtocolHandler ["http-nio-8011"]
+2019-03-17 22:23:25.269 [main] INFO  o.a.catalina.core.StandardService -Starting service [Tomcat]
+2019-03-17 22:23:25.269 [main] INFO  o.a.catalina.core.StandardEngine -Starting Servlet Engine: Apache Tomcat/8.5.31
+2019-03-17 22:23:25.269 [localhost-startStop-1] INFO  o.a.c.core.AprLifecycleListener -The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [D:\jdk\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;D:\jdk\bin;D:\jdk\jre\bin;D:\maven\bin;D:\git\Git\cmd;C:\Users\Ryze\AppData\Local\Microsoft\WindowsApps;;.]
+2019-03-17 22:23:25.394 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] -Initializing Spring embedded WebApplicationContext
+2019-03-17 22:23:25.394 [localhost-startStop-1] INFO  o.s.web.context.ContextLoader -Root WebApplicationContext: initialization completed in 1225 ms
+2019-03-17 22:23:25.658 [localhost-startStop-1] WARN  c.n.c.sources.URLConfigurationSource -No URLs will be polled as dynamic configuration sources.
+2019-03-17 22:23:25.658 [localhost-startStop-1] INFO  c.n.c.sources.URLConfigurationSource -To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2019-03-17 22:23:25.658 [localhost-startStop-1] INFO  c.n.config.DynamicPropertyFactory -DynamicPropertyFactory is initialized with configuration sources: com.netflix.config.ConcurrentCompositeConfiguration@5572034a
+2019-03-17 22:23:27.002 [localhost-startStop-1] INFO  o.s.cloud.commons.util.InetUtils -Cannot determine local hostname
+2019-03-17 22:23:28.181 [localhost-startStop-1] INFO  o.s.cloud.commons.util.InetUtils -Cannot determine local hostname
+2019-03-17 22:23:28.493 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean -Servlet dispatcherServlet mapped to [/]
+2019-03-17 22:23:28.509 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean -Mapping filter: 'characterEncodingFilter' to: [/*]
+2019-03-17 22:23:28.509 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean -Mapping filter: 'httpTraceFilter' to: [/*]
+2019-03-17 22:23:28.509 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean -Mapping filter: 'webMvcMetricsFilter' to: [/*]
+2019-03-17 22:23:28.542 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext -Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'userController': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.lft.providerclient.service.UserService' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@javax.annotation.Resource(shareable=true, lookup=, name=, description=, authenticationType=CONTAINER, type=class java.lang.Object, mappedName=)}
+2019-03-17 22:23:28.542 [main] WARN  o.s.b.f.s.DisposableBeanAdapter -Invocation of destroy method 'close' failed on bean with name 'eurekaRegistration': org.springframework.beans.factory.BeanCreationNotAllowedException: Error creating bean with name 'org.springframework.cloud.netflix.eureka.EurekaClientAutoConfiguration$RefreshableEurekaClientConfiguration': Singleton bean creation not allowed while singletons of this factory are in destruction (Do not request a bean from a BeanFactory in a destroy method implementation!)
+2019-03-17 22:23:28.542 [main] INFO  o.a.catalina.core.StandardService -Stopping service [Tomcat]
+2019-03-17 22:23:28.557 [localhost-startStop-1] WARN  o.a.c.loader.WebappClassLoaderBase -The web application [ROOT] appears to have started a thread named [spring.cloud.inetutils] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.net.Inet6AddressImpl.getHostByAddr(Native Method)
+ java.net.InetAddress$2.getHostByAddr(InetAddress.java:933)
+ java.net.InetAddress.getHostFromNameService(InetAddress.java:618)
+ java.net.InetAddress.getHostName(InetAddress.java:560)
+ java.net.InetAddress.getHostName(InetAddress.java:532)
+ org.springframework.cloud.commons.util.InetUtils$$Lambda$61/1495608502.call(Unknown Source)
+ java.util.concurrent.FutureTask.run$$$capture(FutureTask.java:266)
+ java.util.concurrent.FutureTask.run(FutureTask.java)
+ java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+ java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+ java.lang.Thread.run(Thread.java:748)
+2019-03-17 22:23:28.557 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener -
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2019-03-17 22:23:28.693 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter -
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+A component required a bean of type 'com.lft.providerclient.service.UserService' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'com.lft.providerclient.service.UserService' in your configuration.
+
+2019-03-17 22:34:17.662 [main] INFO  o.s.c.a.AnnotationConfigApplicationContext -Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@db57326: startup date [Sun Mar 17 22:34:17 CST 2019]; root of context hierarchy
+2019-03-17 22:34:17.803 [main] INFO  o.s.b.f.a.AutowiredAnnotationBeanPostProcessor -JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2019-03-17 22:34:17.834 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker -Bean 'configurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$c4a75684] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-03-17 22:34:19.115 [main] INFO  com.lft.consumer.ConsumerApplication -No active profile set, falling back to default profiles: default
+2019-03-17 22:34:19.115 [main] INFO  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext -Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@680bddf5: startup date [Sun Mar 17 22:34:19 CST 2019]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@db57326
+2019-03-17 22:34:19.832 [main] INFO  o.s.cloud.context.scope.GenericScope -BeanFactory id=4e232c20-a739-30b9-9f0f-5ee2552b15d1
+2019-03-17 22:34:19.848 [main] INFO  o.s.b.f.a.AutowiredAnnotationBeanPostProcessor -JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2019-03-17 22:34:19.926 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker -Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$c4a75684] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-03-17 22:34:20.129 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer -Tomcat initialized with port(s): 8011 (http)
+2019-03-17 22:34:20.145 [main] INFO  o.a.coyote.http11.Http11NioProtocol -Initializing ProtocolHandler ["http-nio-8011"]
+2019-03-17 22:34:20.145 [main] INFO  o.a.catalina.core.StandardService -Starting service [Tomcat]
+2019-03-17 22:34:20.145 [main] INFO  o.a.catalina.core.StandardEngine -Starting Servlet Engine: Apache Tomcat/8.5.31
+2019-03-17 22:34:20.160 [localhost-startStop-1] INFO  o.a.c.core.AprLifecycleListener -The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [D:\jdk\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;D:\jdk\bin;D:\jdk\jre\bin;D:\maven\bin;D:\git\Git\cmd;C:\Users\Ryze\AppData\Local\Microsoft\WindowsApps;;.]
+2019-03-17 22:34:20.270 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] -Initializing Spring embedded WebApplicationContext
+2019-03-17 22:34:20.270 [localhost-startStop-1] INFO  o.s.web.context.ContextLoader -Root WebApplicationContext: initialization completed in 1155 ms
+2019-03-17 22:34:20.473 [localhost-startStop-1] WARN  c.n.c.sources.URLConfigurationSource -No URLs will be polled as dynamic configuration sources.
+2019-03-17 22:34:20.473 [localhost-startStop-1] INFO  c.n.c.sources.URLConfigurationSource -To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2019-03-17 22:34:20.535 [localhost-startStop-1] INFO  c.n.config.DynamicPropertyFactory -DynamicPropertyFactory is initialized with configuration sources: com.netflix.config.ConcurrentCompositeConfiguration@1d568957
+2019-03-17 22:34:21.883 [localhost-startStop-1] INFO  o.s.cloud.commons.util.InetUtils -Cannot determine local hostname
+2019-03-17 22:34:23.056 [localhost-startStop-1] INFO  o.s.cloud.commons.util.InetUtils -Cannot determine local hostname
+2019-03-17 22:34:23.369 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean -Servlet dispatcherServlet mapped to [/]
+2019-03-17 22:34:23.384 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean -Mapping filter: 'characterEncodingFilter' to: [/*]
+2019-03-17 22:34:23.384 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean -Mapping filter: 'httpTraceFilter' to: [/*]
+2019-03-17 22:34:23.384 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean -Mapping filter: 'webMvcMetricsFilter' to: [/*]
+2019-03-17 22:34:23.416 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext -Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'userController': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.lft.providerclient.service.UserService' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@javax.annotation.Resource(shareable=true, lookup=, name=, description=, authenticationType=CONTAINER, type=class java.lang.Object, mappedName=)}
+2019-03-17 22:34:23.416 [main] WARN  o.s.b.f.s.DisposableBeanAdapter -Invocation of destroy method 'close' failed on bean with name 'eurekaRegistration': org.springframework.beans.factory.BeanCreationNotAllowedException: Error creating bean with name 'org.springframework.cloud.netflix.eureka.EurekaClientAutoConfiguration$RefreshableEurekaClientConfiguration': Singleton bean creation not allowed while singletons of this factory are in destruction (Do not request a bean from a BeanFactory in a destroy method implementation!)
+2019-03-17 22:34:23.416 [main] INFO  o.a.catalina.core.StandardService -Stopping service [Tomcat]
+2019-03-17 22:34:23.431 [localhost-startStop-1] WARN  o.a.c.loader.WebappClassLoaderBase -The web application [ROOT] appears to have started a thread named [spring.cloud.inetutils] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.net.Inet6AddressImpl.getHostByAddr(Native Method)
+ java.net.InetAddress$2.getHostByAddr(InetAddress.java:933)
+ java.net.InetAddress.getHostFromNameService(InetAddress.java:618)
+ java.net.InetAddress.getHostName(InetAddress.java:560)
+ java.net.InetAddress.getHostName(InetAddress.java:532)
+ org.springframework.cloud.commons.util.InetUtils$$Lambda$61/209429254.call(Unknown Source)
+ java.util.concurrent.FutureTask.run$$$capture(FutureTask.java:266)
+ java.util.concurrent.FutureTask.run(FutureTask.java)
+ java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+ java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+ java.lang.Thread.run(Thread.java:748)
+2019-03-17 22:34:23.431 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener -
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2019-03-17 22:34:23.572 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter -
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+A component required a bean of type 'com.lft.providerclient.service.UserService' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'com.lft.providerclient.service.UserService' in your configuration.
+
+2019-03-17 22:46:55.773 [main] INFO  o.s.c.a.AnnotationConfigApplicationContext -Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@14d14731: startup date [Sun Mar 17 22:46:55 CST 2019]; root of context hierarchy
+2019-03-17 22:46:55.914 [main] INFO  o.s.b.f.a.AutowiredAnnotationBeanPostProcessor -JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2019-03-17 22:46:55.946 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker -Bean 'configurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$9de4f57a] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-03-17 22:46:57.228 [main] INFO  com.lft.consumer.ConsumerApplication -No active profile set, falling back to default profiles: default
+2019-03-17 22:46:57.228 [main] INFO  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext -Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@591fd34d: startup date [Sun Mar 17 22:46:57 CST 2019]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@14d14731
+2019-03-17 22:46:57.943 [main] INFO  o.s.cloud.context.scope.GenericScope -BeanFactory id=4e232c20-a739-30b9-9f0f-5ee2552b15d1
+2019-03-17 22:46:57.959 [main] INFO  o.s.b.f.a.AutowiredAnnotationBeanPostProcessor -JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2019-03-17 22:46:58.037 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker -Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$9de4f57a] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-03-17 22:46:58.224 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer -Tomcat initialized with port(s): 8011 (http)
+2019-03-17 22:46:58.240 [main] INFO  o.a.coyote.http11.Http11NioProtocol -Initializing ProtocolHandler ["http-nio-8011"]
+2019-03-17 22:46:58.240 [main] INFO  o.a.catalina.core.StandardService -Starting service [Tomcat]
+2019-03-17 22:46:58.240 [main] INFO  o.a.catalina.core.StandardEngine -Starting Servlet Engine: Apache Tomcat/8.5.31
+2019-03-17 22:46:58.255 [localhost-startStop-1] INFO  o.a.c.core.AprLifecycleListener -The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [D:\jdk\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;D:\jdk\bin;D:\jdk\jre\bin;D:\maven\bin;D:\git\Git\cmd;C:\Users\Ryze\AppData\Local\Microsoft\WindowsApps;;.]
+2019-03-17 22:46:58.365 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] -Initializing Spring embedded WebApplicationContext
+2019-03-17 22:46:58.365 [localhost-startStop-1] INFO  o.s.web.context.ContextLoader -Root WebApplicationContext: initialization completed in 1137 ms
+2019-03-17 22:46:58.629 [localhost-startStop-1] WARN  c.n.c.sources.URLConfigurationSource -No URLs will be polled as dynamic configuration sources.
+2019-03-17 22:46:58.630 [localhost-startStop-1] INFO  c.n.c.sources.URLConfigurationSource -To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2019-03-17 22:46:58.637 [localhost-startStop-1] INFO  c.n.config.DynamicPropertyFactory -DynamicPropertyFactory is initialized with configuration sources: com.netflix.config.ConcurrentCompositeConfiguration@2c441462
+2019-03-17 22:46:59.962 [localhost-startStop-1] INFO  o.s.cloud.commons.util.InetUtils -Cannot determine local hostname
+2019-03-17 22:47:01.147 [localhost-startStop-1] INFO  o.s.cloud.commons.util.InetUtils -Cannot determine local hostname
+2019-03-17 22:47:01.462 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean -Servlet dispatcherServlet mapped to [/]
+2019-03-17 22:47:01.462 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean -Mapping filter: 'characterEncodingFilter' to: [/*]
+2019-03-17 22:47:01.462 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean -Mapping filter: 'httpTraceFilter' to: [/*]
+2019-03-17 22:47:01.462 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean -Mapping filter: 'webMvcMetricsFilter' to: [/*]
+2019-03-17 22:47:01.508 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext -Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userController': Unsatisfied dependency expressed through field 'userService'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.lft.providerclient.service.UserService' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2019-03-17 22:47:01.508 [main] WARN  o.s.b.f.s.DisposableBeanAdapter -Invocation of destroy method 'close' failed on bean with name 'eurekaRegistration': org.springframework.beans.factory.BeanCreationNotAllowedException: Error creating bean with name 'org.springframework.cloud.netflix.eureka.EurekaClientAutoConfiguration$RefreshableEurekaClientConfiguration': Singleton bean creation not allowed while singletons of this factory are in destruction (Do not request a bean from a BeanFactory in a destroy method implementation!)
+2019-03-17 22:47:01.508 [main] INFO  o.a.catalina.core.StandardService -Stopping service [Tomcat]
+2019-03-17 22:47:01.508 [localhost-startStop-1] WARN  o.a.c.loader.WebappClassLoaderBase -The web application [ROOT] appears to have started a thread named [spring.cloud.inetutils] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.net.Inet6AddressImpl.getHostByAddr(Native Method)
+ java.net.InetAddress$2.getHostByAddr(InetAddress.java:933)
+ java.net.InetAddress.getHostFromNameService(InetAddress.java:618)
+ java.net.InetAddress.getHostName(InetAddress.java:560)
+ java.net.InetAddress.getHostName(InetAddress.java:532)
+ org.springframework.cloud.commons.util.InetUtils$$Lambda$61/909132503.call(Unknown Source)
+ java.util.concurrent.FutureTask.run$$$capture(FutureTask.java:266)
+ java.util.concurrent.FutureTask.run(FutureTask.java)
+ java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+ java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+ java.lang.Thread.run(Thread.java:748)
+2019-03-17 22:47:01.524 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener -
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2019-03-17 22:47:01.663 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter -
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field userService in com.lft.consumer.controller.UserController required a bean of type 'com.lft.providerclient.service.UserService' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'com.lft.providerclient.service.UserService' in your configuration.
+
+2019-03-17 22:50:27.721 [main] INFO  o.s.c.a.AnnotationConfigApplicationContext -Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@5c18016b: startup date [Sun Mar 17 22:50:27 CST 2019]; root of context hierarchy
+2019-03-17 22:50:27.861 [main] INFO  o.s.b.f.a.AutowiredAnnotationBeanPostProcessor -JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2019-03-17 22:50:27.877 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker -Bean 'configurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$bf7db987] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-03-17 22:50:29.163 [main] INFO  com.lft.consumer.ConsumerApplication -No active profile set, falling back to default profiles: default
+2019-03-17 22:50:29.163 [main] INFO  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext -Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@7e97551f: startup date [Sun Mar 17 22:50:29 CST 2019]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@5c18016b
+2019-03-17 22:50:29.865 [main] INFO  o.s.cloud.context.scope.GenericScope -BeanFactory id=4e232c20-a739-30b9-9f0f-5ee2552b15d1
+2019-03-17 22:50:29.881 [main] INFO  o.s.b.f.a.AutowiredAnnotationBeanPostProcessor -JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2019-03-17 22:50:29.959 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker -Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$bf7db987] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-03-17 22:50:30.162 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer -Tomcat initialized with port(s): 8011 (http)
+2019-03-17 22:50:30.162 [main] INFO  o.a.coyote.http11.Http11NioProtocol -Initializing ProtocolHandler ["http-nio-8011"]
+2019-03-17 22:50:30.178 [main] INFO  o.a.catalina.core.StandardService -Starting service [Tomcat]
+2019-03-17 22:50:30.178 [main] INFO  o.a.catalina.core.StandardEngine -Starting Servlet Engine: Apache Tomcat/8.5.31
+2019-03-17 22:50:30.178 [localhost-startStop-1] INFO  o.a.c.core.AprLifecycleListener -The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [D:\jdk\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;D:\jdk\bin;D:\jdk\jre\bin;D:\maven\bin;D:\git\Git\cmd;C:\Users\Ryze\AppData\Local\Microsoft\WindowsApps;;.]
+2019-03-17 22:50:30.303 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] -Initializing Spring embedded WebApplicationContext
+2019-03-17 22:50:30.303 [localhost-startStop-1] INFO  o.s.web.context.ContextLoader -Root WebApplicationContext: initialization completed in 1140 ms
+2019-03-17 22:50:30.584 [localhost-startStop-1] WARN  c.n.c.sources.URLConfigurationSource -No URLs will be polled as dynamic configuration sources.
+2019-03-17 22:50:30.584 [localhost-startStop-1] INFO  c.n.c.sources.URLConfigurationSource -To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2019-03-17 22:50:30.599 [localhost-startStop-1] INFO  c.n.config.DynamicPropertyFactory -DynamicPropertyFactory is initialized with configuration sources: com.netflix.config.ConcurrentCompositeConfiguration@24cfb847
+2019-03-17 22:50:31.926 [localhost-startStop-1] INFO  o.s.cloud.commons.util.InetUtils -Cannot determine local hostname
+2019-03-17 22:50:33.104 [localhost-startStop-1] INFO  o.s.cloud.commons.util.InetUtils -Cannot determine local hostname
+2019-03-17 22:50:33.418 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean -Servlet dispatcherServlet mapped to [/]
+2019-03-17 22:50:33.434 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean -Mapping filter: 'characterEncodingFilter' to: [/*]
+2019-03-17 22:50:33.434 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean -Mapping filter: 'httpTraceFilter' to: [/*]
+2019-03-17 22:50:33.434 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean -Mapping filter: 'webMvcMetricsFilter' to: [/*]
+2019-03-17 22:50:33.465 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext -Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userController': Unsatisfied dependency expressed through field 'userService'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.lft.providerclient.service.UserService' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2019-03-17 22:50:33.465 [main] WARN  o.s.b.f.s.DisposableBeanAdapter -Invocation of destroy method 'close' failed on bean with name 'eurekaRegistration': org.springframework.beans.factory.BeanCreationNotAllowedException: Error creating bean with name 'org.springframework.cloud.netflix.eureka.EurekaClientAutoConfiguration$RefreshableEurekaClientConfiguration': Singleton bean creation not allowed while singletons of this factory are in destruction (Do not request a bean from a BeanFactory in a destroy method implementation!)
+2019-03-17 22:50:33.465 [main] INFO  o.a.catalina.core.StandardService -Stopping service [Tomcat]
+2019-03-17 22:50:33.465 [localhost-startStop-1] WARN  o.a.c.loader.WebappClassLoaderBase -The web application [ROOT] appears to have started a thread named [spring.cloud.inetutils] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.net.Inet6AddressImpl.getHostByAddr(Native Method)
+ java.net.InetAddress$2.getHostByAddr(InetAddress.java:933)
+ java.net.InetAddress.getHostFromNameService(InetAddress.java:618)
+ java.net.InetAddress.getHostName(InetAddress.java:560)
+ java.net.InetAddress.getHostName(InetAddress.java:532)
+ org.springframework.cloud.commons.util.InetUtils$$Lambda$61/811207775.call(Unknown Source)
+ java.util.concurrent.FutureTask.run$$$capture(FutureTask.java:266)
+ java.util.concurrent.FutureTask.run(FutureTask.java)
+ java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+ java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+ java.lang.Thread.run(Thread.java:748)
+2019-03-17 22:50:33.480 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener -
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2019-03-17 22:50:33.590 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter -
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field userService in com.lft.consumer.controller.UserController required a bean of type 'com.lft.providerclient.service.UserService' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'com.lft.providerclient.service.UserService' in your configuration.
+
+2019-03-17 22:51:24.720 [main] INFO  o.s.c.a.AnnotationConfigApplicationContext -Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@131ef10: startup date [Sun Mar 17 22:51:24 CST 2019]; root of context hierarchy
+2019-03-17 22:51:24.846 [main] INFO  o.s.b.f.a.AutowiredAnnotationBeanPostProcessor -JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2019-03-17 22:51:24.862 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker -Bean 'configurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$1466cfa2] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-03-17 22:51:26.120 [main] INFO  com.lft.consumer.ConsumerApplication -No active profile set, falling back to default profiles: default
+2019-03-17 22:51:26.120 [main] INFO  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext -Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@76a2ddf3: startup date [Sun Mar 17 22:51:26 CST 2019]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@131ef10
+2019-03-17 22:51:26.803 [main] INFO  o.s.cloud.context.scope.GenericScope -BeanFactory id=4e232c20-a739-30b9-9f0f-5ee2552b15d1
+2019-03-17 22:51:26.819 [main] INFO  o.s.b.f.a.AutowiredAnnotationBeanPostProcessor -JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2019-03-17 22:51:26.881 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker -Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$1466cfa2] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-03-17 22:51:27.039 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer -Tomcat initialized with port(s): 8011 (http)
+2019-03-17 22:51:27.054 [main] INFO  o.a.coyote.http11.Http11NioProtocol -Initializing ProtocolHandler ["http-nio-8011"]
+2019-03-17 22:51:27.054 [main] INFO  o.a.catalina.core.StandardService -Starting service [Tomcat]
+2019-03-17 22:51:27.054 [main] INFO  o.a.catalina.core.StandardEngine -Starting Servlet Engine: Apache Tomcat/8.5.31
+2019-03-17 22:51:27.054 [localhost-startStop-1] INFO  o.a.c.core.AprLifecycleListener -The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [D:\jdk\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;D:\jdk\bin;D:\jdk\jre\bin;D:\maven\bin;D:\git\Git\cmd;C:\Users\Ryze\AppData\Local\Microsoft\WindowsApps;;.]
+2019-03-17 22:51:27.148 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] -Initializing Spring embedded WebApplicationContext
+2019-03-17 22:51:27.148 [localhost-startStop-1] INFO  o.s.web.context.ContextLoader -Root WebApplicationContext: initialization completed in 1028 ms
+2019-03-17 22:51:27.337 [localhost-startStop-1] WARN  c.n.c.sources.URLConfigurationSource -No URLs will be polled as dynamic configuration sources.
+2019-03-17 22:51:27.337 [localhost-startStop-1] INFO  c.n.c.sources.URLConfigurationSource -To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2019-03-17 22:51:27.337 [localhost-startStop-1] INFO  c.n.config.DynamicPropertyFactory -DynamicPropertyFactory is initialized with configuration sources: com.netflix.config.ConcurrentCompositeConfiguration@4299a18f
+2019-03-17 22:51:28.686 [localhost-startStop-1] INFO  o.s.cloud.commons.util.InetUtils -Cannot determine local hostname
+2019-03-17 22:51:29.856 [localhost-startStop-1] INFO  o.s.cloud.commons.util.InetUtils -Cannot determine local hostname
+2019-03-17 22:51:30.107 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean -Servlet dispatcherServlet mapped to [/]
+2019-03-17 22:51:30.107 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean -Mapping filter: 'characterEncodingFilter' to: [/*]
+2019-03-17 22:51:30.107 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean -Mapping filter: 'httpTraceFilter' to: [/*]
+2019-03-17 22:51:30.107 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean -Mapping filter: 'webMvcMetricsFilter' to: [/*]
+2019-03-17 22:51:30.138 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext -Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userController': Unsatisfied dependency expressed through field 'userService'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.lft.providerclient.service.UserService' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2019-03-17 22:51:30.138 [main] WARN  o.s.b.f.s.DisposableBeanAdapter -Invocation of destroy method 'close' failed on bean with name 'eurekaRegistration': org.springframework.beans.factory.BeanCreationNotAllowedException: Error creating bean with name 'org.springframework.cloud.netflix.eureka.EurekaClientAutoConfiguration$RefreshableEurekaClientConfiguration': Singleton bean creation not allowed while singletons of this factory are in destruction (Do not request a bean from a BeanFactory in a destroy method implementation!)
+2019-03-17 22:51:30.138 [main] INFO  o.a.catalina.core.StandardService -Stopping service [Tomcat]
+2019-03-17 22:51:30.138 [localhost-startStop-1] WARN  o.a.c.loader.WebappClassLoaderBase -The web application [ROOT] appears to have started a thread named [spring.cloud.inetutils] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.net.Inet6AddressImpl.getHostByAddr(Native Method)
+ java.net.InetAddress$2.getHostByAddr(InetAddress.java:933)
+ java.net.InetAddress.getHostFromNameService(InetAddress.java:618)
+ java.net.InetAddress.getHostName(InetAddress.java:560)
+ java.net.InetAddress.getHostName(InetAddress.java:532)
+ org.springframework.cloud.commons.util.InetUtils$$Lambda$61/1496355635.call(Unknown Source)
+ java.util.concurrent.FutureTask.run(FutureTask.java:266)
+ java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+ java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+ java.lang.Thread.run(Thread.java:748)
+2019-03-17 22:51:30.154 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener -
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2019-03-17 22:51:30.248 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter -
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field userService in com.lft.consumer.controller.UserController required a bean of type 'com.lft.providerclient.service.UserService' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'com.lft.providerclient.service.UserService' in your configuration.
+
+2019-03-17 22:59:14.918 [main] INFO  o.s.c.a.AnnotationConfigApplicationContext -Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@1941a8ff: startup date [Sun Mar 17 22:59:14 CST 2019]; root of context hierarchy
+2019-03-17 22:59:15.059 [main] INFO  o.s.b.f.a.AutowiredAnnotationBeanPostProcessor -JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2019-03-17 22:59:15.091 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker -Bean 'configurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$fec1e9e1] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-03-17 22:59:16.367 [main] INFO  com.lft.consumer.ConsumerApplication -No active profile set, falling back to default profiles: default
+2019-03-17 22:59:16.367 [main] INFO  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext -Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@3c49fab6: startup date [Sun Mar 17 22:59:16 CST 2019]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@1941a8ff
+2019-03-17 22:59:17.118 [main] INFO  o.s.cloud.context.scope.GenericScope -BeanFactory id=4e232c20-a739-30b9-9f0f-5ee2552b15d1
+2019-03-17 22:59:17.134 [main] INFO  o.s.b.f.a.AutowiredAnnotationBeanPostProcessor -JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2019-03-17 22:59:17.227 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker -Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$fec1e9e1] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-03-17 22:59:17.415 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer -Tomcat initialized with port(s): 8011 (http)
+2019-03-17 22:59:17.431 [main] INFO  o.a.coyote.http11.Http11NioProtocol -Initializing ProtocolHandler ["http-nio-8011"]
+2019-03-17 22:59:17.431 [main] INFO  o.a.catalina.core.StandardService -Starting service [Tomcat]
+2019-03-17 22:59:17.431 [main] INFO  o.a.catalina.core.StandardEngine -Starting Servlet Engine: Apache Tomcat/8.5.31
+2019-03-17 22:59:17.446 [localhost-startStop-1] INFO  o.a.c.core.AprLifecycleListener -The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [D:\jdk\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;D:\jdk\bin;D:\jdk\jre\bin;D:\maven\bin;D:\git\Git\cmd;C:\Users\Ryze\AppData\Local\Microsoft\WindowsApps;;.]
+2019-03-17 22:59:17.540 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] -Initializing Spring embedded WebApplicationContext
+2019-03-17 22:59:17.540 [localhost-startStop-1] INFO  o.s.web.context.ContextLoader -Root WebApplicationContext: initialization completed in 1173 ms
+2019-03-17 22:59:17.852 [localhost-startStop-1] WARN  c.n.c.sources.URLConfigurationSource -No URLs will be polled as dynamic configuration sources.
+2019-03-17 22:59:17.852 [localhost-startStop-1] INFO  c.n.c.sources.URLConfigurationSource -To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2019-03-17 22:59:17.852 [localhost-startStop-1] INFO  c.n.config.DynamicPropertyFactory -DynamicPropertyFactory is initialized with configuration sources: com.netflix.config.ConcurrentCompositeConfiguration@6ec5874b
+2019-03-17 22:59:19.187 [localhost-startStop-1] INFO  o.s.cloud.commons.util.InetUtils -Cannot determine local hostname
+2019-03-17 22:59:20.359 [localhost-startStop-1] INFO  o.s.cloud.commons.util.InetUtils -Cannot determine local hostname
+2019-03-17 22:59:20.685 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean -Servlet dispatcherServlet mapped to [/]
+2019-03-17 22:59:20.685 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean -Mapping filter: 'characterEncodingFilter' to: [/*]
+2019-03-17 22:59:20.685 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean -Mapping filter: 'httpTraceFilter' to: [/*]
+2019-03-17 22:59:20.685 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean -Mapping filter: 'webMvcMetricsFilter' to: [/*]
+2019-03-17 22:59:20.732 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext -Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'userController': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.lft.providerclient.service.UserService' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@javax.annotation.Resource(shareable=true, lookup=, name=, description=, authenticationType=CONTAINER, type=class java.lang.Object, mappedName=)}
+2019-03-17 22:59:20.732 [main] WARN  o.s.b.f.s.DisposableBeanAdapter -Invocation of destroy method 'close' failed on bean with name 'eurekaRegistration': org.springframework.beans.factory.BeanCreationNotAllowedException: Error creating bean with name 'org.springframework.cloud.netflix.eureka.EurekaClientAutoConfiguration$RefreshableEurekaClientConfiguration': Singleton bean creation not allowed while singletons of this factory are in destruction (Do not request a bean from a BeanFactory in a destroy method implementation!)
+2019-03-17 22:59:20.732 [main] INFO  o.a.catalina.core.StandardService -Stopping service [Tomcat]
+2019-03-17 22:59:20.732 [localhost-startStop-1] WARN  o.a.c.loader.WebappClassLoaderBase -The web application [ROOT] appears to have started a thread named [spring.cloud.inetutils] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.net.Inet6AddressImpl.getHostByAddr(Native Method)
+ java.net.InetAddress$2.getHostByAddr(InetAddress.java:933)
+ java.net.InetAddress.getHostFromNameService(InetAddress.java:618)
+ java.net.InetAddress.getHostName(InetAddress.java:560)
+ java.net.InetAddress.getHostName(InetAddress.java:532)
+ org.springframework.cloud.commons.util.InetUtils$$Lambda$65/1066513687.call(Unknown Source)
+ java.util.concurrent.FutureTask.run$$$capture(FutureTask.java:266)
+ java.util.concurrent.FutureTask.run(FutureTask.java)
+ java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+ java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+ java.lang.Thread.run(Thread.java:748)
+2019-03-17 22:59:20.749 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener -
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2019-03-17 22:59:20.874 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter -
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+A component required a bean of type 'com.lft.providerclient.service.UserService' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'com.lft.providerclient.service.UserService' in your configuration.
+
+2019-03-17 23:00:08.388 [main] INFO  o.s.c.a.AnnotationConfigApplicationContext -Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@3e821657: startup date [Sun Mar 17 23:00:08 CST 2019]; root of context hierarchy
+2019-03-17 23:00:08.530 [main] INFO  o.s.b.f.a.AutowiredAnnotationBeanPostProcessor -JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2019-03-17 23:00:08.561 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker -Bean 'configurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$5bf540b2] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-03-17 23:00:09.849 [main] INFO  com.lft.consumer.ConsumerApplication -No active profile set, falling back to default profiles: default
+2019-03-17 23:00:09.849 [main] INFO  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext -Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@6e4ea0bd: startup date [Sun Mar 17 23:00:09 CST 2019]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@3e821657
+2019-03-17 23:00:10.599 [main] INFO  o.s.cloud.context.scope.GenericScope -BeanFactory id=4e232c20-a739-30b9-9f0f-5ee2552b15d1
+2019-03-17 23:00:10.624 [main] INFO  o.s.b.f.a.AutowiredAnnotationBeanPostProcessor -JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2019-03-17 23:00:10.699 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker -Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$5bf540b2] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-03-17 23:00:10.902 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer -Tomcat initialized with port(s): 8011 (http)
+2019-03-17 23:00:10.902 [main] INFO  o.a.coyote.http11.Http11NioProtocol -Initializing ProtocolHandler ["http-nio-8011"]
+2019-03-17 23:00:10.918 [main] INFO  o.a.catalina.core.StandardService -Starting service [Tomcat]
+2019-03-17 23:00:10.918 [main] INFO  o.a.catalina.core.StandardEngine -Starting Servlet Engine: Apache Tomcat/8.5.31
+2019-03-17 23:00:10.918 [localhost-startStop-1] INFO  o.a.c.core.AprLifecycleListener -The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [D:\jdk\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;D:\jdk\bin;D:\jdk\jre\bin;D:\maven\bin;D:\git\Git\cmd;C:\Users\Ryze\AppData\Local\Microsoft\WindowsApps;;.]
+2019-03-17 23:00:11.046 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] -Initializing Spring embedded WebApplicationContext
+2019-03-17 23:00:11.046 [localhost-startStop-1] INFO  o.s.web.context.ContextLoader -Root WebApplicationContext: initialization completed in 1197 ms
+2019-03-17 23:00:11.359 [localhost-startStop-1] WARN  c.n.c.sources.URLConfigurationSource -No URLs will be polled as dynamic configuration sources.
+2019-03-17 23:00:11.359 [localhost-startStop-1] INFO  c.n.c.sources.URLConfigurationSource -To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2019-03-17 23:00:11.375 [localhost-startStop-1] INFO  c.n.config.DynamicPropertyFactory -DynamicPropertyFactory is initialized with configuration sources: com.netflix.config.ConcurrentCompositeConfiguration@55f220b7
+2019-03-17 23:00:12.710 [localhost-startStop-1] INFO  o.s.cloud.commons.util.InetUtils -Cannot determine local hostname
+2019-03-17 23:00:13.883 [localhost-startStop-1] INFO  o.s.cloud.commons.util.InetUtils -Cannot determine local hostname
+2019-03-17 23:00:14.212 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean -Servlet dispatcherServlet mapped to [/]
+2019-03-17 23:00:14.212 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean -Mapping filter: 'characterEncodingFilter' to: [/*]
+2019-03-17 23:00:14.212 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean -Mapping filter: 'httpTraceFilter' to: [/*]
+2019-03-17 23:00:14.212 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean -Mapping filter: 'webMvcMetricsFilter' to: [/*]
+2019-03-17 23:00:14.259 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext -Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'userController': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.lft.providerclient.service.UserService' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@javax.annotation.Resource(shareable=true, lookup=, name=, description=, authenticationType=CONTAINER, type=class java.lang.Object, mappedName=)}
+2019-03-17 23:00:14.259 [main] WARN  o.s.b.f.s.DisposableBeanAdapter -Invocation of destroy method 'close' failed on bean with name 'eurekaRegistration': org.springframework.beans.factory.BeanCreationNotAllowedException: Error creating bean with name 'org.springframework.cloud.netflix.eureka.EurekaClientAutoConfiguration$RefreshableEurekaClientConfiguration': Singleton bean creation not allowed while singletons of this factory are in destruction (Do not request a bean from a BeanFactory in a destroy method implementation!)
+2019-03-17 23:00:14.259 [main] INFO  o.a.catalina.core.StandardService -Stopping service [Tomcat]
+2019-03-17 23:00:14.259 [localhost-startStop-1] WARN  o.a.c.loader.WebappClassLoaderBase -The web application [ROOT] appears to have started a thread named [spring.cloud.inetutils] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.net.Inet6AddressImpl.getHostByAddr(Native Method)
+ java.net.InetAddress$2.getHostByAddr(InetAddress.java:933)
+ java.net.InetAddress.getHostFromNameService(InetAddress.java:618)
+ java.net.InetAddress.getHostName(InetAddress.java:560)
+ java.net.InetAddress.getHostName(InetAddress.java:532)
+ org.springframework.cloud.commons.util.InetUtils$$Lambda$61/1771421544.call(Unknown Source)
+ java.util.concurrent.FutureTask.run$$$capture(FutureTask.java:266)
+ java.util.concurrent.FutureTask.run(FutureTask.java)
+ java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+ java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+ java.lang.Thread.run(Thread.java:748)
+2019-03-17 23:00:14.275 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener -
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2019-03-17 23:00:14.384 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter -
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+A component required a bean of type 'com.lft.providerclient.service.UserService' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'com.lft.providerclient.service.UserService' in your configuration.
+
+2019-03-17 23:10:57.179 [main] INFO  o.s.c.a.AnnotationConfigApplicationContext -Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@63798ca7: startup date [Sun Mar 17 23:10:57 CST 2019]; root of context hierarchy
+2019-03-17 23:10:57.320 [main] INFO  o.s.b.f.a.AutowiredAnnotationBeanPostProcessor -JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2019-03-17 23:10:57.351 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker -Bean 'configurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$2f2d5df1] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-03-17 23:10:58.633 [main] INFO  com.lft.consumer.ConsumerApplication -No active profile set, falling back to default profiles: default
+2019-03-17 23:10:58.642 [main] INFO  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext -Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@79c3f01f: startup date [Sun Mar 17 23:10:58 CST 2019]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@63798ca7
+2019-03-17 23:10:59.371 [main] INFO  o.s.cloud.context.scope.GenericScope -BeanFactory id=4e232c20-a739-30b9-9f0f-5ee2552b15d1
+2019-03-17 23:10:59.387 [main] INFO  o.s.b.f.a.AutowiredAnnotationBeanPostProcessor -JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2019-03-17 23:10:59.465 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker -Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$2f2d5df1] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-03-17 23:10:59.663 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer -Tomcat initialized with port(s): 8011 (http)
+2019-03-17 23:10:59.678 [main] INFO  o.a.coyote.http11.Http11NioProtocol -Initializing ProtocolHandler ["http-nio-8011"]
+2019-03-17 23:10:59.678 [main] INFO  o.a.catalina.core.StandardService -Starting service [Tomcat]
+2019-03-17 23:10:59.678 [main] INFO  o.a.catalina.core.StandardEngine -Starting Servlet Engine: Apache Tomcat/8.5.31
+2019-03-17 23:10:59.678 [localhost-startStop-1] INFO  o.a.c.core.AprLifecycleListener -The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [D:\jdk\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;D:\jdk\bin;D:\jdk\jre\bin;D:\maven\bin;D:\git\Git\cmd;C:\Users\Ryze\AppData\Local\Microsoft\WindowsApps;;.]
+2019-03-17 23:10:59.803 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] -Initializing Spring embedded WebApplicationContext
+2019-03-17 23:10:59.803 [localhost-startStop-1] INFO  o.s.web.context.ContextLoader -Root WebApplicationContext: initialization completed in 1161 ms
+2019-03-17 23:11:00.100 [localhost-startStop-1] WARN  c.n.c.sources.URLConfigurationSource -No URLs will be polled as dynamic configuration sources.
+2019-03-17 23:11:00.100 [localhost-startStop-1] INFO  c.n.c.sources.URLConfigurationSource -To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2019-03-17 23:11:00.116 [localhost-startStop-1] INFO  c.n.config.DynamicPropertyFactory -DynamicPropertyFactory is initialized with configuration sources: com.netflix.config.ConcurrentCompositeConfiguration@7087ff0a
+2019-03-17 23:11:01.449 [localhost-startStop-1] INFO  o.s.cloud.commons.util.InetUtils -Cannot determine local hostname
+2019-03-17 23:11:02.623 [localhost-startStop-1] INFO  o.s.cloud.commons.util.InetUtils -Cannot determine local hostname
+2019-03-17 23:11:02.954 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean -Servlet dispatcherServlet mapped to [/]
+2019-03-17 23:11:02.954 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean -Mapping filter: 'characterEncodingFilter' to: [/*]
+2019-03-17 23:11:02.954 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean -Mapping filter: 'httpTraceFilter' to: [/*]
+2019-03-17 23:11:02.954 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean -Mapping filter: 'webMvcMetricsFilter' to: [/*]
+2019-03-17 23:11:03.001 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext -Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userController': Unsatisfied dependency expressed through field 'userService'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.lft.providerclient.service.UserService' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2019-03-17 23:11:03.001 [main] WARN  o.s.b.f.s.DisposableBeanAdapter -Invocation of destroy method 'close' failed on bean with name 'eurekaRegistration': org.springframework.beans.factory.BeanCreationNotAllowedException: Error creating bean with name 'org.springframework.cloud.netflix.eureka.EurekaClientAutoConfiguration$RefreshableEurekaClientConfiguration': Singleton bean creation not allowed while singletons of this factory are in destruction (Do not request a bean from a BeanFactory in a destroy method implementation!)
+2019-03-17 23:11:03.001 [main] INFO  o.a.catalina.core.StandardService -Stopping service [Tomcat]
+2019-03-17 23:11:03.001 [localhost-startStop-1] WARN  o.a.c.loader.WebappClassLoaderBase -The web application [ROOT] appears to have started a thread named [spring.cloud.inetutils] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.net.Inet6AddressImpl.getHostByAddr(Native Method)
+ java.net.InetAddress$2.getHostByAddr(InetAddress.java:933)
+ java.net.InetAddress.getHostFromNameService(InetAddress.java:618)
+ java.net.InetAddress.getHostName(InetAddress.java:560)
+ java.net.InetAddress.getHostName(InetAddress.java:532)
+ org.springframework.cloud.commons.util.InetUtils$$Lambda$61/139947936.call(Unknown Source)
+ java.util.concurrent.FutureTask.run$$$capture(FutureTask.java:266)
+ java.util.concurrent.FutureTask.run(FutureTask.java)
+ java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+ java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+ java.lang.Thread.run(Thread.java:748)
+2019-03-17 23:11:03.017 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener -
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2019-03-17 23:11:03.126 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter -
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field userService in com.lft.consumer.controller.UserController required a bean of type 'com.lft.providerclient.service.UserService' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'com.lft.providerclient.service.UserService' in your configuration.
+
+2019-03-17 23:45:05.187 [main] INFO  o.s.c.a.AnnotationConfigApplicationContext -Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@66ac5762: startup date [Sun Mar 17 23:45:05 CST 2019]; root of context hierarchy
+2019-03-17 23:45:05.328 [main] INFO  o.s.b.f.a.AutowiredAnnotationBeanPostProcessor -JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2019-03-17 23:45:05.359 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker -Bean 'configurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$7bd678f6] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-03-17 23:45:06.637 [main] INFO  com.lft.consumer.ConsumerApplication -No active profile set, falling back to default profiles: default
+2019-03-17 23:45:06.647 [main] INFO  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext -Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@51671b08: startup date [Sun Mar 17 23:45:06 CST 2019]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@66ac5762
+2019-03-17 23:45:07.410 [main] INFO  o.s.cloud.context.scope.GenericScope -BeanFactory id=4e232c20-a739-30b9-9f0f-5ee2552b15d1
+2019-03-17 23:45:07.426 [main] INFO  o.s.b.f.a.AutowiredAnnotationBeanPostProcessor -JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2019-03-17 23:45:07.520 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker -Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$7bd678f6] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-03-17 23:45:07.727 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer -Tomcat initialized with port(s): 8011 (http)
+2019-03-17 23:45:07.743 [main] INFO  o.a.coyote.http11.Http11NioProtocol -Initializing ProtocolHandler ["http-nio-8011"]
+2019-03-17 23:45:07.743 [main] INFO  o.a.catalina.core.StandardService -Starting service [Tomcat]
+2019-03-17 23:45:07.743 [main] INFO  o.a.catalina.core.StandardEngine -Starting Servlet Engine: Apache Tomcat/8.5.31
+2019-03-17 23:45:07.743 [localhost-startStop-1] INFO  o.a.c.core.AprLifecycleListener -The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [D:\jdk\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;D:\jdk\bin;D:\jdk\jre\bin;D:\maven\bin;D:\git\Git\cmd;C:\Users\Ryze\AppData\Local\Microsoft\WindowsApps;;.]
+2019-03-17 23:45:07.868 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] -Initializing Spring embedded WebApplicationContext
+2019-03-17 23:45:07.868 [localhost-startStop-1] INFO  o.s.web.context.ContextLoader -Root WebApplicationContext: initialization completed in 1221 ms
+2019-03-17 23:45:08.135 [localhost-startStop-1] WARN  c.n.c.sources.URLConfigurationSource -No URLs will be polled as dynamic configuration sources.
+2019-03-17 23:45:08.135 [localhost-startStop-1] INFO  c.n.c.sources.URLConfigurationSource -To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2019-03-17 23:45:08.150 [localhost-startStop-1] INFO  c.n.config.DynamicPropertyFactory -DynamicPropertyFactory is initialized with configuration sources: com.netflix.config.ConcurrentCompositeConfiguration@3dc726ec
+2019-03-17 23:45:09.475 [localhost-startStop-1] INFO  o.s.cloud.commons.util.InetUtils -Cannot determine local hostname
+2019-03-17 23:45:10.640 [localhost-startStop-1] INFO  o.s.cloud.commons.util.InetUtils -Cannot determine local hostname
+2019-03-17 23:45:10.968 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean -Servlet dispatcherServlet mapped to [/]
+2019-03-17 23:45:10.968 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean -Mapping filter: 'characterEncodingFilter' to: [/*]
+2019-03-17 23:45:10.968 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean -Mapping filter: 'httpTraceFilter' to: [/*]
+2019-03-17 23:45:10.968 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean -Mapping filter: 'webMvcMetricsFilter' to: [/*]
+2019-03-17 23:45:11.014 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext -Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userController': Unsatisfied dependency expressed through field 'userService'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.lft.providerclient.service.UserService' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2019-03-17 23:45:11.014 [main] WARN  o.s.b.f.s.DisposableBeanAdapter -Invocation of destroy method 'close' failed on bean with name 'eurekaRegistration': org.springframework.beans.factory.BeanCreationNotAllowedException: Error creating bean with name 'org.springframework.cloud.netflix.eureka.EurekaClientAutoConfiguration$RefreshableEurekaClientConfiguration': Singleton bean creation not allowed while singletons of this factory are in destruction (Do not request a bean from a BeanFactory in a destroy method implementation!)
+2019-03-17 23:45:11.014 [main] INFO  o.a.catalina.core.StandardService -Stopping service [Tomcat]
+2019-03-17 23:45:11.014 [localhost-startStop-1] WARN  o.a.c.loader.WebappClassLoaderBase -The web application [ROOT] appears to have started a thread named [spring.cloud.inetutils] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.net.Inet6AddressImpl.getHostByAddr(Native Method)
+ java.net.InetAddress$2.getHostByAddr(InetAddress.java:933)
+ java.net.InetAddress.getHostFromNameService(InetAddress.java:618)
+ java.net.InetAddress.getHostName(InetAddress.java:560)
+ java.net.InetAddress.getHostName(InetAddress.java:532)
+ org.springframework.cloud.commons.util.InetUtils$$Lambda$61/1647946662.call(Unknown Source)
+ java.util.concurrent.FutureTask.run$$$capture(FutureTask.java:266)
+ java.util.concurrent.FutureTask.run(FutureTask.java)
+ java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+ java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+ java.lang.Thread.run(Thread.java:748)
+2019-03-17 23:45:11.030 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener -
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2019-03-17 23:45:11.140 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter -
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field userService in com.lft.consumer.controller.UserController required a bean of type 'com.lft.providerclient.service.UserService' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'com.lft.providerclient.service.UserService' in your configuration.
+
+2019-03-17 23:48:02.546 [main] INFO  o.s.c.a.AnnotationConfigApplicationContext -Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@45c7e403: startup date [Sun Mar 17 23:48:02 CST 2019]; root of context hierarchy
+2019-03-17 23:48:02.670 [main] INFO  o.s.b.f.a.AutowiredAnnotationBeanPostProcessor -JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2019-03-17 23:48:02.685 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker -Bean 'configurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$4297b092] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-03-17 23:48:03.952 [main] INFO  com.lft.consumer.ConsumerApplication -No active profile set, falling back to default profiles: default
+2019-03-17 23:48:03.952 [main] INFO  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext -Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@1e097d59: startup date [Sun Mar 17 23:48:03 CST 2019]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@45c7e403
+2019-03-17 23:48:04.631 [main] INFO  o.s.cloud.context.scope.GenericScope -BeanFactory id=4e232c20-a739-30b9-9f0f-5ee2552b15d1
+2019-03-17 23:48:04.642 [main] INFO  o.s.b.f.a.AutowiredAnnotationBeanPostProcessor -JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2019-03-17 23:48:04.707 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker -Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$4297b092] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-03-17 23:48:04.863 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer -Tomcat initialized with port(s): 8011 (http)
+2019-03-17 23:48:04.878 [main] INFO  o.a.coyote.http11.Http11NioProtocol -Initializing ProtocolHandler ["http-nio-8011"]
+2019-03-17 23:48:04.878 [main] INFO  o.a.catalina.core.StandardService -Starting service [Tomcat]
+2019-03-17 23:48:04.878 [main] INFO  o.a.catalina.core.StandardEngine -Starting Servlet Engine: Apache Tomcat/8.5.31
+2019-03-17 23:48:04.878 [localhost-startStop-1] INFO  o.a.c.core.AprLifecycleListener -The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [D:\jdk\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;D:\jdk\bin;D:\jdk\jre\bin;D:\maven\bin;D:\git\Git\cmd;C:\Users\Ryze\AppData\Local\Microsoft\WindowsApps;;.]
+2019-03-17 23:48:04.972 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] -Initializing Spring embedded WebApplicationContext
+2019-03-17 23:48:04.972 [localhost-startStop-1] INFO  o.s.web.context.ContextLoader -Root WebApplicationContext: initialization completed in 1020 ms
+2019-03-17 23:48:05.160 [localhost-startStop-1] WARN  c.n.c.sources.URLConfigurationSource -No URLs will be polled as dynamic configuration sources.
+2019-03-17 23:48:05.160 [localhost-startStop-1] INFO  c.n.c.sources.URLConfigurationSource -To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2019-03-17 23:48:05.160 [localhost-startStop-1] INFO  c.n.config.DynamicPropertyFactory -DynamicPropertyFactory is initialized with configuration sources: com.netflix.config.ConcurrentCompositeConfiguration@258ca43d
+2019-03-17 23:48:06.518 [localhost-startStop-1] INFO  o.s.cloud.commons.util.InetUtils -Cannot determine local hostname
+2019-03-17 23:48:07.695 [localhost-startStop-1] INFO  o.s.cloud.commons.util.InetUtils -Cannot determine local hostname
+2019-03-17 23:48:07.945 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean -Servlet dispatcherServlet mapped to [/]
+2019-03-17 23:48:07.945 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean -Mapping filter: 'characterEncodingFilter' to: [/*]
+2019-03-17 23:48:07.945 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean -Mapping filter: 'httpTraceFilter' to: [/*]
+2019-03-17 23:48:07.960 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean -Mapping filter: 'webMvcMetricsFilter' to: [/*]
+2019-03-17 23:48:07.992 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext -Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userController': Unsatisfied dependency expressed through field 'userService'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.lft.providerclient.service.UserService' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2019-03-17 23:48:07.992 [main] WARN  o.s.b.f.s.DisposableBeanAdapter -Invocation of destroy method 'close' failed on bean with name 'eurekaRegistration': org.springframework.beans.factory.BeanCreationNotAllowedException: Error creating bean with name 'org.springframework.cloud.netflix.eureka.EurekaClientAutoConfiguration$RefreshableEurekaClientConfiguration': Singleton bean creation not allowed while singletons of this factory are in destruction (Do not request a bean from a BeanFactory in a destroy method implementation!)
+2019-03-17 23:48:07.992 [main] INFO  o.a.catalina.core.StandardService -Stopping service [Tomcat]
+2019-03-17 23:48:07.992 [localhost-startStop-1] WARN  o.a.c.loader.WebappClassLoaderBase -The web application [ROOT] appears to have started a thread named [spring.cloud.inetutils] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.net.Inet6AddressImpl.getHostByAddr(Native Method)
+ java.net.InetAddress$2.getHostByAddr(InetAddress.java:933)
+ java.net.InetAddress.getHostFromNameService(InetAddress.java:618)
+ java.net.InetAddress.getHostName(InetAddress.java:560)
+ java.net.InetAddress.getHostName(InetAddress.java:532)
+ org.springframework.cloud.commons.util.InetUtils$$Lambda$61/1156304131.call(Unknown Source)
+ java.util.concurrent.FutureTask.run(FutureTask.java:266)
+ java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+ java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+ java.lang.Thread.run(Thread.java:748)
+2019-03-17 23:48:07.992 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener -
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2019-03-17 23:48:08.102 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter -
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field userService in com.lft.consumer.controller.UserController required a bean of type 'com.lft.providerclient.service.UserService' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'com.lft.providerclient.service.UserService' in your configuration.
+
+2019-03-17 23:49:37.814 [main] INFO  o.s.c.a.AnnotationConfigApplicationContext -Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@3668d4: startup date [Sun Mar 17 23:49:37 CST 2019]; root of context hierarchy
+2019-03-17 23:49:37.955 [main] INFO  o.s.b.f.a.AutowiredAnnotationBeanPostProcessor -JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2019-03-17 23:49:37.986 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker -Bean 'configurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$be10da6a] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-03-17 23:49:39.260 [main] INFO  com.lft.consumer.ConsumerApplication -No active profile set, falling back to default profiles: default
+2019-03-17 23:49:39.276 [main] INFO  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext -Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@1efdcd5: startup date [Sun Mar 17 23:49:39 CST 2019]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@3668d4
+2019-03-17 23:49:39.803 [main] INFO  o.s.cloud.context.scope.GenericScope -BeanFactory id=ef6f201b-7662-318f-b71a-0fd21d39a192
+2019-03-17 23:49:39.819 [main] INFO  o.s.b.f.a.AutowiredAnnotationBeanPostProcessor -JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2019-03-17 23:49:39.897 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker -Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$be10da6a] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-03-17 23:49:40.085 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer -Tomcat initialized with port(s): 8011 (http)
+2019-03-17 23:49:40.100 [main] INFO  o.a.coyote.http11.Http11NioProtocol -Initializing ProtocolHandler ["http-nio-8011"]
+2019-03-17 23:49:40.100 [main] INFO  o.a.catalina.core.StandardService -Starting service [Tomcat]
+2019-03-17 23:49:40.100 [main] INFO  o.a.catalina.core.StandardEngine -Starting Servlet Engine: Apache Tomcat/8.5.31
+2019-03-17 23:49:40.100 [localhost-startStop-1] INFO  o.a.c.core.AprLifecycleListener -The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [D:\jdk\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;D:\jdk\bin;D:\jdk\jre\bin;D:\maven\bin;D:\git\Git\cmd;C:\Users\Ryze\AppData\Local\Microsoft\WindowsApps;;.]
+2019-03-17 23:49:40.210 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] -Initializing Spring embedded WebApplicationContext
+2019-03-17 23:49:40.210 [localhost-startStop-1] INFO  o.s.web.context.ContextLoader -Root WebApplicationContext: initialization completed in 934 ms
+2019-03-17 23:49:40.288 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean -Servlet dispatcherServlet mapped to [/]
+2019-03-17 23:49:40.288 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean -Mapping filter: 'characterEncodingFilter' to: [/*]
+2019-03-17 23:49:40.319 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext -Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userController': Unsatisfied dependency expressed through field 'userService'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.lft.providerclient.service.UserService' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2019-03-17 23:49:40.319 [main] INFO  o.a.catalina.core.StandardService -Stopping service [Tomcat]
+2019-03-17 23:49:40.335 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener -
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2019-03-17 23:49:40.428 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter -
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field userService in com.lft.consumer.controller.UserController required a bean of type 'com.lft.providerclient.service.UserService' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'com.lft.providerclient.service.UserService' in your configuration.
+
+2019-03-17 23:50:19.541 [main] INFO  o.s.c.a.AnnotationConfigApplicationContext -Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@26bab2f1: startup date [Sun Mar 17 23:50:19 CST 2019]; root of context hierarchy
+2019-03-17 23:50:19.696 [main] INFO  o.s.b.f.a.AutowiredAnnotationBeanPostProcessor -JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2019-03-17 23:50:19.727 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker -Bean 'configurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$94d7f837] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-03-17 23:50:21.001 [main] INFO  com.lft.consumer.ConsumerApplication -No active profile set, falling back to default profiles: default
+2019-03-17 23:50:21.016 [main] INFO  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext -Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@412c995d: startup date [Sun Mar 17 23:50:21 CST 2019]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@26bab2f1
+2019-03-17 23:50:21.547 [main] INFO  o.s.cloud.context.scope.GenericScope -BeanFactory id=ef6f201b-7662-318f-b71a-0fd21d39a192
+2019-03-17 23:50:21.563 [main] INFO  o.s.b.f.a.AutowiredAnnotationBeanPostProcessor -JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2019-03-17 23:50:21.643 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker -Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$94d7f837] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-03-17 23:50:21.828 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer -Tomcat initialized with port(s): 8011 (http)
+2019-03-17 23:50:21.844 [main] INFO  o.a.coyote.http11.Http11NioProtocol -Initializing ProtocolHandler ["http-nio-8011"]
+2019-03-17 23:50:21.844 [main] INFO  o.a.catalina.core.StandardService -Starting service [Tomcat]
+2019-03-17 23:50:21.844 [main] INFO  o.a.catalina.core.StandardEngine -Starting Servlet Engine: Apache Tomcat/8.5.31
+2019-03-17 23:50:21.859 [localhost-startStop-1] INFO  o.a.c.core.AprLifecycleListener -The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [D:\jdk\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;D:\jdk\bin;D:\jdk\jre\bin;D:\maven\bin;D:\git\Git\cmd;C:\Users\Ryze\AppData\Local\Microsoft\WindowsApps;;.]
+2019-03-17 23:50:21.953 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] -Initializing Spring embedded WebApplicationContext
+2019-03-17 23:50:21.953 [localhost-startStop-1] INFO  o.s.web.context.ContextLoader -Root WebApplicationContext: initialization completed in 937 ms
+2019-03-17 23:50:22.031 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean -Servlet dispatcherServlet mapped to [/]
+2019-03-17 23:50:22.031 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean -Mapping filter: 'characterEncodingFilter' to: [/*]
+2019-03-17 23:50:22.062 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext -Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userController': Unsatisfied dependency expressed through field 'userService'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.lft.providerclient.service.UserService' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2019-03-17 23:50:22.062 [main] INFO  o.a.catalina.core.StandardService -Stopping service [Tomcat]
+2019-03-17 23:50:22.078 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener -
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2019-03-17 23:50:22.172 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter -
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field userService in com.lft.consumer.controller.UserController required a bean of type 'com.lft.providerclient.service.UserService' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'com.lft.providerclient.service.UserService' in your configuration.
+

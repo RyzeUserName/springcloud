@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/eureka-admin.iml" filepath="$PROJECT_DIR$/eureka-admin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/eureka-admin-sample/eureka-admin-sample.iml" filepath="$PROJECT_DIR$/eureka-admin-sample/eureka-admin-sample.iml" />
+      <module fileurl="file://$PROJECT_DIR$/eureka-admin-sample/eureka-admin-sample-client-a/eureka-admin-sample-client-a.iml" filepath="$PROJECT_DIR$/eureka-admin-sample/eureka-admin-sample-client-a/eureka-admin-sample-client-a.iml" />
+      <module fileurl="file://$PROJECT_DIR$/eureka-admin-sample/eureka-admin-sample-eureka-server/eureka-admin-sample-eureka-server.iml" filepath="$PROJECT_DIR$/eureka-admin-sample/eureka-admin-sample-eureka-server/eureka-admin-sample-eureka-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/eureka-admin-sample/eureka-admin-sample-zuul-server/eureka-admin-sample-zuul-server.iml" filepath="$PROJECT_DIR$/eureka-admin-sample/eureka-admin-sample-zuul-server/eureka-admin-sample-zuul-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/eureka-admin-starter-client/eureka-admin-starter-client.iml" filepath="$PROJECT_DIR$/eureka-admin-starter-client/eureka-admin-starter-client.iml" />
+      <module fileurl="file://$PROJECT_DIR$/eureka-admin-starter-server/eureka-admin-starter-server.iml" filepath="$PROJECT_DIR$/eureka-admin-starter-server/eureka-admin-starter-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/eureka-admin-utils/eureka-admin-utils.iml" filepath="$PROJECT_DIR$/eureka-admin-utils/eureka-admin-utils.iml" />
+      <module fileurl="file://$PROJECT_DIR$/eureka-admin-view/eureka-admin-view.iml" filepath="$PROJECT_DIR$/eureka-admin-view/eureka-admin-view.iml" />
+    </modules>
+  </component>
+</project>

@@ -1,0 +1,723 @@
+# Spring cloud
+
+ 简介：
+
+随着互联网的快速发展，单机架构的应用已不能满足需求，架构的发展为 单体---分布式---SOA---微服务
+
+**单体**应用架构在java领域就是一个web应用，表现层---业务层---数据访问层---DB层。
+
+**分布式**应用架构将业务垂直切分，切分成不同的单体架构，通过api 相互调用。
+
+**SOA**面向服务的软件体系结构，不同应用的不同组件通过网络上的通信协议向其他应用组件提供服务或者消费服务。
+
+**微服务**可以说是SOA的继续发展的成果，是一种架构风格，对于一个大型复杂的业务系统，它的业务功能可以拆分成
+
+多个相互独立的微服务，之间是松耦合的，通过各种远程协议相互同步/ 异步通信，可以单独部署，扩/缩容以及升/降级。
+
+**各种微服务的对比**
+
+|               | Springcloud         | Dubbo         | Motan        | MSEC             | 其他                |
+| ------------- | ------------------- | ------------- | ------------ | ---------------- | ------------------- |
+| 功能          | 微服务完整整方案    | 服务治理框架  | 服务治理框架 | 服务开发运营框架 |                     |
+| 通信方式      | REST/Http           | RPC协议       | RPC/Hessian2 | Protocol buffer  | grpc  thrift        |
+| 服务发现/注册 | eureka              | ZK,Nacos      | ZK/Consul    | 只有服务发现     | Etcd                |
+| 负载均衡      | Ribbon              | 客户端负载    | 客户端负载   | 客户端负载       | Ngnix+Lua           |
+| 容错机制      | 6种容错策略         | 6种容错策略   | 2种容错策略  | 自动容错         | keepalive，hertbeat |
+| 熔断机制      | Hystrix             | 无            | 无           | 无               | 无                  |
+| 配置中心      | spring cloud config | Nacos         | 无           | 无               | Apollo Nacos        |
+| 网关          | Zuul,Gateway        | 无            | 无           | 无               | Kong 自研           |
+| 服务监控      | Hystrix+Turbine     | Dubbo+Monitor | 无           | Monitor          | ELK                 |
+| 链路监控      | Sleuth+Zipkin       | 无            | 无           | 无               | Pinpoint            |
+| 多语言        | Rest支持多语言      | java          | java         | java c++ php     | java node php       |
+| 社区活跃      | 高                  | 高            | 一般         | 位置             | 略                  |
+
+
+
+**解决方案**：
+
+​	1.spring cloud 为基础的	
+
+| 组件       | 方案1                                                | 方案2  | 方案3        |
+| :--------- | ---------------------------------------------------- | ------ | ------------ |
+| 服务发现   | Eureka                                               | Consul | etcd / Nacos |
+| 公用组件   | Fegin Ribbo Hytrix                                   | 同左边 | 同左边       |
+| 网关       | Zuul（性能低）/spring cloud Gateway（推介）          | 同左边 | 同左边       |
+| 配置中心   | Spring cloud Config/ 携程阿波罗/阿里Nacos            | 同左边 | 自研网关组件 |
+| 全链路监控 | zikpin（不推介）/Pinpoint（不推介）/Skywalking(推介) | 同左边 | 同左边       |
+| 搭配使用   | 分布式事务 、容器化、Spring Cloud与DDD、gRPC         | 同左边 | 同左边       |
+
+​	2.dubbo
+
+​	dubbo+Nacos+其他
+
+中间组件：
+
+​	操作系统+中间件+数据库 为传统基础软件的 三驾马车，随着互联网的发展，中间件不断演进扩大自己的边界，常见的中间件：服务治理中间件、配置中心、全链路监控、分布式事务、分布式定时任务、消息中间件、API网关、分布式缓存、数据库中间件等，spring cloud 也是一个中间件。
+
+​	当然也包含很多中间件也可以很好地与各个组件无缝对接：
+
+​		服务治理中间件  （服务治理注册  容错 熔断 负载 自我保护等）
+
+​		配置中心中间件  （配置文件 统一管理 实时发布）
+
+​		网关中间件 （第一代 zuul 第二代Gateway）
+
+​		全链路监控中间件  (推介 Pinpoint Skywalking)
+
+# 1.核心组件
+
+## 	1.Eureka
+
+​	 ------------------------------------------eureka-1   eureka-2 文件夹
+
+### 		1.背景
+
+​			单体架构：调用为 接口+appId+appkey
+
+​			SOA架构：ngnix维护可用服务（1.本机维护本机服务 2.调用方维护服务 ）
+
+​			微服务：作为一个单独中间组件 或者 ngnix+监控组件 或者 ngix+动态load
+
+### 		2.简介
+
+​				是Netflix公司开源的一款服务发现组件，包括server+client（java 编写的）
+
+​			AP，即维护可用和容错，维护最终一致性，server端采用p2p的复制模式，保证最终一致性
+
+​			注册时带个期限，并通过心跳通信，一旦不健康就是剔除，而consul采用的Raft 算法，提供强一致性保证
+
+### 		3.api 
+
+​			server 提供了很多 rest api 供操作 各个应用实例
+
+​				
+
+| 操作                       | http动作                                                     | 描述                                |
+| -------------------------- | ------------------------------------------------------------ | ----------------------------------- |
+| 注册新的应用实例           | POST /eureka/apps/{appId}                                    | 成功204 json/xml                    |
+| 注销应用实例               | DELETE /eureka/apps/{appId}/{instanceId}                     | 成功返回200                         |
+| 应用实例发送心跳           | PUT /eureka/apps/{appId}/{instanceId}                        | 成功返回200 不存在instanceId返回404 |
+| 查询所有应用               | GET /eureka/apps                                             | 成功返回200 json/xml                |
+| 查询指定appId的实例        | GET /eureka/apps/{appId}                                     | 成功返回200 json/xml                |
+| 根据instacneId和 appId查询 | GET /eureka/apps/{appId}/{instanceId}                        | 成功返回200 json/xml                |
+| 根据instanceId 查询        | GET /eureka/instances/{instanceId}                           | 成功返回200 json/xml                |
+| 暂定应用实例               | PUT /eureka/apps/{appId}/{instanceId}/status?value=OUT_OF_SERVICE | 成功200 失败500                     |
+| 恢复应用实例               | DELETE /eureka/apps/{appId}/{instanceId}/status?value=UP(参数可以不传) | 成功200 失败500                     |
+| 更新元数据                 | PUT /eureka/apps/{appId}/{instanceId}/metadata?key=value     | 成功200 失败500                     |
+| 根据vip地址查询            | GET /eureka/vips/{vipAddress}                                | 成功返回200 json/xml                |
+| 根据svip地址查询           | GET /eureka/svips/{svipAddress}                              | 成功返回200 json/xml                |
+
+### 	4.核心类
+
+​		**InstanceInfo 类 注册服务实例**
+
+​		![1551755128080](.\assets\1551755128080.png)
+
+​		**LeaseInfo 类 应用实例的租约信息**
+
+​	![1551755738010](.\assets\1551755738010.png)
+
+​		
+
+​		**ServiceInstance 是Spring cloud对服务发现的实例信息的抽象接口** 约定了服务实例应该有的信息
+
+![1551756858996](.\assets\1551756858996.png)
+
+​	Eureka对其实现 是EurekaRegistration  同时还实现了Closeable  即优雅的关闭 eurekaClient.shutdown()
+
+​	
+
+​	InstanceInfo 的状态 枚举![1551757620150](.\assets\1551757620150.png)
+
+### 	5.核心操作
+
+​	对于服务发现来说，围绕服务实例主要有：
+
+​		服务注册（register）
+
+​		服务下线 (cancel)
+
+​		服务租约( renew)
+
+​		服务剔除( evict)
+
+​	围绕这些功能 **Eureka** 设计核心操作类
+
+​		LeaseManager
+
+​		LookupService
+
+​		InstanceRegistry
+
+​		AbstractInstanceRegistry
+
+​		PeerAwareInstanceRegistryImpl
+
+​	**Spring Cloud Eureka** 围绕这些抽象和定义了几个核心类
+
+​		InstanceRegistry
+
+​		ServiceRegistry
+
+​		EurekaServiceRegistry
+
+​		EurekaRegistration
+
+​		EurekaClientAutoConfiguration
+
+​		EurekaClientConfigBean
+
+​		EurekaInstanceConfigBean
+
+​	**LeaseManager**接口定义了应用服务实例在服务中心的几个操作
+
+​		register cancel renew evict（剔除是服务端的方法）
+
+​	**LookupService**接口定义了client从服务中心获取服务实例的查询方法
+
+​		![1551865704138](.\assets\1551865704138.png)
+
+### 		6.设计理念
+
+​		1.概述
+
+​		作为一个服务注册中心其实要解决一下问题：
+
+​		**服务实例如何注册到服务中心**
+
+​		调用eureka的 rest api
+
+​		对于java 可以用eureka client 的api
+
+​		对于spring cloud 基于spring boot自动实现服务信息注册
+
+​		**服务实例如何从服务中心剔除**
+
+​		在服务实例关闭的时候通过钩子或者其他生命周期的回调方法去调用Eureka Server的 de-register方法，
+
+​		删除自身的服务实例信息，当然还会存在另外一个问题，不主动删除怎么办，通过心跳，即客户端需要向注册
+
+​		中心发送心跳，续租，倘若没有那么服务端会主动剔除该服务实例。
+
+​		**服务实例信息一致性**
+
+​		首先注册中心不是单点的，也可以是集群的，如何保持一致性：
+
+​		有以下几点：
+
+​		①**AP优于CP**
+
+​			分区容错性都是需要的，而Eureka是部署在AWS背景下设计的,其设计者认为 失败是不可避免的，希望在
+
+​			产生网络分区或者其他情况下还能够提供服务注册和发现，在实践生产中，服务注册中心保留可用以及一
+
+​			些过期数据总比丢掉要好，当然需要配合负载均衡和失败重试 以达到更好地效果，也就是说**不是强一致性**
+
+​		②**Peer to Peer**
+
+​			一般的分布式系统的数据在副本之间的复制方式分为：主从复制 和 对等复制
+
+​			**主从复制**即Master-slave 模式，写操作由主负责，其他从才从主机更新信息，从机可以分担读请求，主的
+
+​			写操作压力是整个系统的瓶颈（同步更新，异步更新，同步与异步混合更新）
+
+​			 **对等复制**即peer to peer，副本之间不区分主和从，任何副本都可以接收写操作，然后副本之间进行相互的
+
+​			数据更新。但是副本之间的**数据同步**以及**冲突处理**是一个比较棘手的问题
+
+​				客户端：
+
+​					优先选择与实例所在的分区，如果没找到则默认defaultZone，客户端使用一个Set维护一个不可
+
+​					用Eureka Server列表，优先在可用列表中选择，如果失败切换到下一个Eureka Server重试,重试
+
+​					默认次数是3，另外为了防止每个Client都按照配置文件的指定顺序进行请求造成Eureka Server
+
+​					节点请求分布不均衡的情况，Client端有个定时任务，默认5分钟执行一次刷新并随机化Eureka
+
+​					Server的列表
+
+​				服务端：
+
+​					Eureka Server本身依赖Eureka Client，即Server 通过Client获取信息，在Server启动
+
+​					时，会有个synUp的操作，通过Eureka Client向其他的Eureka Server 节点中的一个节点获取注
+
+​					册的应用实例信息，然后复制到peer 节点，为了避免循环复制，http header是
+
+​					HEADER_REPLICATION 来标记该请求是复制操作，那么就解决了数据同步，但是还有个数据
+
+​					冲突问题，Server端复制信息版本号对比，高的优先，当然Eureka  不是采用版本号，而是采用
+
+​					lastDirtyTimestamp字段对比，SyncWhenTimestampDiffers配置开启（默认开启），当	
+
+​					lastDirtyTimestamp不为空，当请求方请求本地Server时，进行对比
+
+​					本地Server小的话说明，本地Server数据落后，返回404，要求应用实例重新注册；
+
+​					本地Server大的话，说明请求方的数据落后，返回409，要求其同步自己最新的数据信息。
+
+​					当然节点之间的复制并一定都会成功，Eureka还通过应用实例与Server 之间的心跳进行服务租
+
+​					约续期，完成数据最终修复。
+
+​		③**Zone以及Region设计** 高可用
+
+​					因为设计这个的公司的大部分服务在 Amazon上，因此的 Eureka的设计一部分也是基于Amazon
+
+​					的Zone以及Region，Amazon的云服务器是托管在全球的各个地方，Region代表一个独立的地
+
+​					理区域，每个Region下面又是多个AvailabityZone，同一个Rrgion下的AvailabityZone之间
+
+​					相互复制，跨Region不会进行复制，AvailabityZone就像是一个个机房，独立，为Region提供高
+
+​					可用，Eureka Server的高可用类似于 AvailabityZone 。
+
+​					Eureka Client支持perferSameZone，就是获取EurekaServer的serviceUrl 优先拉取跟应用实例
+
+​					同在一个AvailabityZone的Eureka Server的地址列表，一个AvailabityZone 可设置多个Eureka
+
+​					Server，它们之间构成peer节点，然后采用peer to peer的复制
+
+​		④**SELF PRESERVATION**(自我保护) 假死-延时处理
+
+​				处理好网络偶尔抖动或暂时不可用造成的误判，**即假死**，Eureka Server和Eureka Client端出现网络分
+
+​				区，极端情况下Eureka Server清空部分服务实例列表，这将影响Eureka Server的高可用，因此引入
+
+​				了自我保护机制。
+
+​				客户端定时向服务端发送心跳租约，服务端根据注册实例数，去计算每分钟从应用实例接收的心跳
+
+​				数，如果最近一分钟接收到的续约次数小于等于指定阈值，关闭租约失效剔除，禁止定时任务剔除
+
+​				失效实例，即 **延时处理**。
+
+​				生产环境可以适当降低阈值,降低门槛，
+
+​				eureka.instance.lease-renewal-interval-in-seconds= 10 # 默认30
+
+​				eureka.server.renewal-percent-threshold =0.49 #默认 0.85
+
+### 	7.Eureka的参数调优及监控
+
+​		**1.Client**
+
+​			基本参数
+
+​				是否注册，发送心跳的时间间隔等
+
+​			定时任务
+
+​				定时续期，定时刷新，定时发送心跳等参数设置
+
+​			http参数
+
+​				连接超时，连接池等参数设置
+
+​		**2.Server**
+
+​			基本参数
+
+​				指定自我保护等参数，剔除实例的頻率，等
+
+​			response cache参数
+
+​				提供了 ConcurrentMap 的readOnlyCacheMap
+
+​				和Guava Cache的ReadWriteCacheMap
+
+​				设置这些缓存的更新时间頻率等
+
+​			peer相关参数
+
+​				指定从配置文件更新serviceUrl 和更新 peer nodes状态信息时间间隔
+
+​			http相关参数
+
+​				连接超时，连接池等参数设置
+
+​		**3.问题**
+
+​			1.服务下线了，Server 还会返回该服务实例信息
+
+​			2.服务上线了，Client 不能及时获取到
+
+​			3.出现自我保护的一堆红字等
+
+​			解决：Eureka Server 不是强一致的，因此会存在一些过期的信息：
+
+​				1.应用剔除依赖于Server 端的EvictionTask的定时任务
+
+​				2.Server端存在缓存
+
+​				3.Server端引入自我保护
+
+​				1解决-> 调整 EvictionTask任务的时间间隔，减小该值
+
+​				eureka.server.eviction-interval-timer-in-ms 默认60*1000 即60秒
+
+​				2解决-> 缓存可以
+
+​				eureka.server.use-read-only-response-cache= false 关闭只读缓存
+
+​				或者
+
+​				eureka.server.response-cache-auto-expiration-in-seconds= 180
+
+​				默认 180秒 调整小即可
+
+​				当然针对测试环境 服务获取不及时可以调整 客户端拉取Server端信息的頻率
+
+​				eureka.server.registry-fetch-interval-seconds =30 默认 30s 可以调小
+
+​				3解决->关闭自我保护
+
+​				eureka.server.enable-self-preservation=false
+
+​		**4.指标监控**
+
+​			spring boot 2.x  支持Netflix Spectator 获取全部的Monitor
+
+### 	8.实战
+
+​			eureka-2 文件夹
+
+​			1. 在线扩容 OnlineExpansion     根据配置中心的配置变更进行动态扩容
+
+​			 2. 多Zone MultiZone   配置不同的Zone
+
+​			3. 支持 远程Region RemoteRegion  
+
+​			4.开启http basic 认证 HttpBasic
+
+​			5.https  Https
+
+​			6.admin  EurekaAdmin
+
+​			7.**故障演练  FaultDrill**
+
+​				1.Eureka Server 全部不可用
+
+​					① 应用服务启动前不可用
+
+​						应用可以启动，有报错信息为：ConnectionException：connnection refused
+
+​						针对服务端负载均衡或者服务端ip固定，eureka.client.backup-registry-impl 属性
+
+​						可以在读取不到注册信息时，从这back registry读取作为 fallback
+
+​						实现BackupRegistry接口
+
+​					② 应用服务运行时不可用
+
+​						client端有个定时任务CacheRefreshThread 从server端拉取注册信息到本地，如果有挂掉
+
+​						的话，该定时任务会报异常 ConnectionException：connnection refused，本地的
+
+​						localRegionApps变量不会得到更新	
+
+​				2.Eureka Server 部分不可用
+
+​					①client 端
+
+​						client 端有个定时任（AsyncResolver.updateTask）去拉取serviceUrl变更，如果有变更的
+
+​						话会动态变更，拉取完之后 client端 进行随机化 ServerUrl，Client端会维护一个不可用
+
+​						Server列表,当该列表超过阈值时，会被清空，一般拉取完server列表会剔除不可用列表，
+
+​						但是当剔除完列表就空了的话，就不剔除了。当一个被剔除了，加入不可用列表，拉取信息
+
+​						就从剩下的可用中拉取信息
+
+​					① Server端
+
+​						服务端是peer to peer ，当一台挂了则服务端的 replication会受影响，PeerEurekaNodes
+
+​						有个定时任务（peersUpdateTask），会从配置文件拉取avaliabilityZones以及ServiceUrl
+
+​						信息，然后运行时更新peerEurekaNodes信息，当一台挂了，人工介入会进行剔除，不剔
+
+​						除的话，会报错connection to peer  localhost  retrying after delay
+
+​								 ConnectionException：connnection refused
+
+​						服务端目前没有对peerEurekaNodes 进行健康检查。
+
+​				3.Eureka高可用
+
+​						1.Region  基于Amazon的Region，默认不会拉取远端的region，client可以配置成拉取的
+
+​						2.AvilabilityZone 默认拉取 配置的zone的信息，如果没配的话，那就是第一个Zone
+
+​					client 端高可用
+
+​						1.启动前，可以配置fallback 的注册server
+
+​						2.启动后，server全不可用，那么本地localRegion不会被更新，定时更新线程
+
+​						cacheRefershThread会报错
+
+​						3.启动后，server部分不可用，可以人工介入，修改client的配置文件，动态加载，一般
+
+​						client 太多，也不会这么操作，client 会维护不可用列表，剔除
+
+​					Server端
+
+​						是peer to peer 也就无所谓高可用了，主要的高可用在客户端就可以了，服务端也支持从远
+
+​						Region 获取服务，remote-region-urls-with-name 可以设置远端的server 作为fallback,
+
+​						另外一点就是，Server端的自我保护，即对 一分钟内剔除的服务实例数量达到规定的阈值
+
+​						时，禁止定时任务剔除实例。从而保护服务实例（也解决了 假死等）					
+
+## 	2.Feign 
+
+​		----------------------------------------------------------feign
+
+### 	1.概述
+
+​		Feign是一个声明式，模板化的http客户端，使用Feign 只需要创建一个接口，写上注解，就可以调用远
+
+​		程接口了，支持编解码，特性：
+
+​		1.可插拔的注释支持，包括Feign注解和JAX-RS注解
+
+​		2.支持可插拔的http编解码器
+
+​		3.支持Hystrix和它的fallback，整合好了
+
+​		4.支持Ribbon，整合好了
+
+​		5.支持http的请求和响应压缩
+
+### 	2.入门
+
+​		----------------feign
+
+### 	3.原理
+
+​	**@EnableFeignClients** 开启spring 容器扫描 @FeignClient  并加入到IOC容器，当其调用时，通过jdk的代理方式，生成具体的RequestTemplate，为每个接口方法都生成一个RequestTemplate 对象，该对象封装了HTTP请求的全部信息，如参数等，然后RequestTemplate 生成 Request，发送给Client，最后Client 被封装到LoadBalanceClient类，这个类结合Ribbon负载均衡发起服务之间的调用。
+
+​	@EnableFeignClients  
+
+​	属性 defaultConfiguration 可以指定配置类，配置类中配置对全部 feign 默认参数
+
+​	也可以在啊application 文件配置 feign.client.config.default.XXX=XXX
+
+​	默认 配置文件会覆盖java 代码，feign.client.default-to-properties=false 改变feign的配置生效优先级
+
+​	**@FeignClient** 是在接口上，
+
+​	属性 name 指定 FeignClient 的名称，如果使用Ribbon，name会作为微服务的名称，用于服务发现。
+
+​	属性 url 一般用于调试，可以手动指定调用地址
+
+​	属性 decode404 发生404 时如果是true 会调用解码，否则跑出FeignException
+
+​	属性 configuration 自定义Feign的Encoder  Decoder LogLevel Contract
+
+​	属性 fallback 定义容错的处理类，远程调用失败或者超时时会去调用 容错处理类
+
+​	属性 fallbackFactory 工厂类，用于生成fallback类示例，通过这个通用的容错类减少重复代码
+
+​	属性 path 定义当前 FeignClient 的统一 前缀
+
+​	当然也可以通过 application 文件配置特定 feignNane 的
+
+​	feign.client.config.feignNane.XXX=XXXX
+
+​	**开启日志**
+
+​		1.application 配置 日志级别  logging.level.XXXXpackage=DEBUG
+
+​		2.配置
+
+```java
+@Configuration
+public class FeignConfig {
+    /**
+     * Logger.Level 的具体级别如下：
+     * NONE：不记录任何信息
+     * BASIC：仅记录请求方法、URL以及响应状态码和执行时间
+     * HEADERS：除了记录 BASIC级别的信息外，还会记录请求和响应的头信息
+     * FULL：记录所有请求与响应的明细，包括头信息、请求体、元数据
+     * @return
+     */
+    @Bean
+    Logger.Level getLevel() {
+        return Logger.Level.FULL;
+    }
+}
+```
+
+​	**超时设置**
+
+​	Feign的调用分两层，Ribbon的调用和Hystrix的调用，高版本的Hystrix默认是关闭的。
+
+​	当出现：read timed out executing 。。。SocketTimeoutException：Read timed out
+
+​	**是Ribbon 超时** 
+
+​	ribbon.ReadTimeout: 120000
+
+​	ribbon.ConnectTimeout: 30000
+
+​	**开启了Hystrix** ----HystrixRuntimeException
+
+​	hystrix.shareSecurityContext=true
+
+​	hystrix.command.default.circuitBreaker.sleepWindowInMlliseconds= 100000
+
+​	hystrix.command.default.circuitBreaker.foreClosed= true
+
+​	hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds= 600000
+
+### 	4.实战
+
+​	1.普通调用+替换成httpclient+okhttp（默认是jdk 的URLConnection 发送http 请求，没有连接池，但对每个地址保持
+
+​	一个长连接，即利用Http的persistence conncetion 可以用Http Client 和 okhttp 替换feign 默认的Client）
+
+​	2.springMVC get绑定pojo 解决
+
+​	3.文件上传（feign-form）
+
+​	4.图片的输出 可以转成byte[]
+
+​	5.Feign传递 token （类似于一个 拦截器相当于2）
+
+​	6.venus-cloud-feign
+
+​		为了解决：① feign 上注解与Spring MVC 上的注解没有关系，需要写两遍
+
+​				  ② feign 上注解 并不支持 Spring MVC 全部注解 （当然可以通过feign拦截器）
+
+## 	3.Ribbon
+
+### 	1.概述
+
+​		Netflix公司负载均衡组件，丰富的负载策略、重试机制、支持多协议的异步和响应式模型、容错、缓存与批处理
+
+​		负载均衡分硬件（F5）和软件（ngnix等）负载均衡，即利用特定方式将流量分摊到多个操作单元上的一种手
+
+​		段，它对系统吞吐量与系统处理能力有着质的提升。毫不夸张的说，当今极少有企业没有用到负载均衡器或者
+
+​		负载均衡策略的。
+
+​			其他分类的负载均衡还有**集中式负载均衡**和**进程内负载均衡**。**集中式负载均衡**指位于因特网与服务提供者
+
+​		之间，并负责把网络请求转发到各个提供单位，ngnix与f5是一类，也叫服务端负载均衡
+
+​		**进程内负载均衡**是指在实例库选取一个实例进行流量导入，实例库一般是在eureka 或者zookpeer等，也叫客户
+
+​		端负载均衡，赋予了应用一些支配HTTP与TCP行为的能力。
+
+### 	2.入门
+
+​	------------------------------------------------------------------------------------------bibbonhello
+
+### 	3.实战
+
+​	1.负载策略
+
+​		
+
+| 策略类                    | 命名             | 描述                                                         |
+| ------------------------- | ---------------- | ------------------------------------------------------------ |
+| RandomRule                | 随机策略         | 随机选择Server                                               |
+| RoundRobinRule            | 轮询策略         | 按顺序循环选择                                               |
+| RetryRule                 | 重试策略         | 在一个配置时间段内选择server不成功，则会一直尝试选择一个可用的server |
+| BestAvaliableRule         | 最低并发策略     | 逐个考察Server 如果server断路器打开，则忽略，在选择其他并发连接最低的Server |
+| AvailabilityFilteringRule | 可用过滤策略     | 过滤掉一致连接失败并被标记为circuit tripped的server，过滤掉哪些高并发连接的server（active connections 拆过配置的阈值） |
+| ResponseTimeWeughtedRule  | 响应时间加权策略 | 根据server的响应时间分配权重，响应时间越长权重越低，概率也就越低，直接跟响应时间挂钩 |
+| ZoneAvoidanceRule         | 区域权衡策略     | 综合判断server所在区域的性能和server的可用性轮询选择server，并且判断一个AWS Zone的运行性能是否可用，剔除不可用的Zone的所有server |
+
+​	自定义配置：
+
+​			①全局配置 直接返回对应策略的 bean
+
+​			②通过配置 特定的配置类 在@FeignClient 的configuration 属性为那个特殊的配置类
+
+​				当然也可以在@FeignClients 俩面配置多个@RibbonClinet
+
+​			③还可以通过配置文件配置,指定对应应用的负载均衡策略
+
+```yml
+client: #客户端 spring.application.name
+  ribbon:
+    NFLoadBalancerRuleClassName: #对应的配置类 上面列表
+```
+
+​	2.超时与重试（容错）
+
+​	3.饥饿加载（为了防止第一次超时）
+
+​	4.利用配置文件配置（指定特定 实现一些类）
+
+​	5.脱离Eureka使用 （失去了动态列表）
+
+```yml
+ribbon:
+  eureka:
+    enabled: false
+client:
+    ribbon:
+      listOfServers: http://localhost:7070,http://localhost:7071
+```
+
+### 	4.进阶
+
+​	1.核心工作原理
+
+​	
+
+| 接口                      | 描述                                                    | 默认实现                       |
+| ------------------------- | ------------------------------------------------------- | ------------------------------ |
+| IClientConfig             | 定义Ribbon中管理配置的接口                              | DefaultClientConfigImpl        |
+| IRule                     | 定义Ribbon中负载均策略的接口                            | ZoneAvoidanceRule              |
+| IPing                     | 定义定期ping服务检查可用性的接口                        | DummyPing                      |
+| ServerList< Server>       | 定义获取服务列表方法的接口                              | ConfigurationBaseServerList    |
+| ServerFilterList< Server> | 定义特定期望获取服务列表方法的接口                      | ZonePreferenceServerListFilter |
+| ILoadBalancer             | 定义负载均衡选择服务的核心方法的接口                    | ZoneAwareLoadBalancer          |
+| ServerListUpdater         | 为DynamicServerListLoadBalancer定义动态更新服务列表接口 | PollingServerListUpdater       |
+
+​	
+
+​	2.源码导读
+
+​		从@LoadBalanced 开始 看到RestTemplate 使用LoadBalancerClient
+
+![1552990503932](.\assets\1552990503932.png)
+
+## 	4.Hystrix
+
+## 	5.Zuul
+
+# 2.进阶实战
+
+## 	1.Config
+
+## 	2.consul
+
+## 	3.全链路监控
+
+## 	4.Gateway
+
+​	
+
+# 3.解决方案
+
+## 	1.与gRpc
+
+## 	2.版本控制与灰度发布
+
+## 	3.容器化
+
+## 	4.dubbo 迁移
+
+## 	5.分布式事务
+
+## 	6.领域驱动实践

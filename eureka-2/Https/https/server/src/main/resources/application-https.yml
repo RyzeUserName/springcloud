@@ -1,0 +1,24 @@
+server:
+  port: 8761
+  ssl:
+    enabled: true
+    key-store: classpath:server.p12
+    key-store-password: Spring Cloud
+    key-store-type: PKCS12
+    key-alias: server
+eureka:
+  instance:
+    hostname: localhost
+    secure-port: ${server.port}
+    secure-port-enabled: true
+    non-secure-port-enabled: false
+    home-page-url: https://${eureka.instance.hostname}:${server.port}/
+    home-page-url-path: https://${eureka.instance.hostname}:${server.port}/
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: https://${eureka.instance.hostname}:${server.port}/eureka/
+  server:
+    waitTimeInMsWhenSyncEmpty: 0
+    enableSelfPreservation: false

@@ -1,0 +1,60 @@
+2019-03-18 09:44:49.240 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter -
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field userService in com.lft.consumer.controller.UserController required a bean of type 'com.lft.providerclient.service.UserService' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'com.lft.providerclient.service.UserService' in your configuration.
+
+2019-03-18 09:53:23.319 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter -
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field userService in com.lft.consumer.controller.UserController required a bean of type 'com.lft.providerclient.service.UserService' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'com.lft.providerclient.service.UserService' in your configuration.
+
+2019-03-18 10:30:23.455 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter -
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field userService in com.lft.consumer.controller.UserController required a bean of type 'com.lft.providerclient.service.UserService' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'com.lft.providerclient.service.UserService' in your configuration.
+
+2019-03-18 10:40:36.428 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter -
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field userService in com.lft.consumer.controller.UserController required a bean of type 'com.lft.providerclient.service.UserService' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'com.lft.providerclient.service.UserService' in your configuration.
+

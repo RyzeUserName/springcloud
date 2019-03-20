@@ -1,0 +1,16 @@
+server:
+  port: 7777
+spring:
+  application:
+    name: loadbalance
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    prefer-ip-address: true
+
+#client: #客户端 spring.application.name
+#  ribbon:
+#    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule #对应的配置类 上面列表

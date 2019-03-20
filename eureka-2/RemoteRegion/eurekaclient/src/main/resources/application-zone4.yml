@@ -1,0 +1,15 @@
+server:
+  port: 8074
+spring:
+  application.name: client
+eureka:
+  instance:
+    metadata-map.zone: zone4
+  client:
+    region: region-west
+    service-url:
+      zone3: http://localhost:8763/eureka/
+      zone4: http://localhost:8764/eureka/
+    availability-zones:
+      region-east: zone3,zone4
+    prefer-same-zone-eureka: true

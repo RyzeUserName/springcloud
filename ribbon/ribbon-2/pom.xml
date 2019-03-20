@@ -20,6 +20,8 @@
     </properties>
     <modules>
         <module>server</module>
+        <module>loadbalance</module>
+        <module>client</module>
     </modules>
     <dependencies>
         <dependency>

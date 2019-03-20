@@ -730,7 +730,9 @@ client:
 
 ### 	2.实战
 
-​		
+​		hystrix1  普通断路器
+
+​		hystrix2  feign中使用断路器 + 仪表盘Dashboard
 
 ​		
 

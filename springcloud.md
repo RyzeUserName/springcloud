@@ -730,9 +730,21 @@ client:
 
 ### 	2.实战
 
-​		
+​		Hystrix 异常处理 fallback 的回滚情况:
 
-​		
+​			①FAILURE: 实行失败，抛出异常
+
+​			②TIMEOUT: 失败超时
+
+​			③SHORT_CIRCUITED: 断路器打开
+
+​			④THREAD_POOL_REJECTED:线程池拒绝
+
+​			⑤SEMAPHORE_REJECTED:信号量拒绝
+
+​		有一种异常是不会出发回滚，BAD_REQUEST,会抛出 HystrixBadRequestException,这类异常是由非法参数或
+
+者系统异常导致的，对于这类异常可以根据响应创建对应的异常封装或者直接处理。
 
 ## 	5.Zuul
 

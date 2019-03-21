@@ -731,13 +731,13 @@ client:
 ### 	2.实战
 
 
-​		hystrix1  普通断路器
+​		**1.**hystrix1  普通断路器
 
-​	        hystrix2  feign中使用断路器 
+​	        **2.**hystrix2  feign中使用断路器 
 
-​		hystrix- dashboard  仪表盘Dashboard+ turbine
+​		**3.**hystrix- dashboard  仪表盘Dashboard+ turbine
 
-​		Hystrix 异常处理 fallback 的回滚情况:
+​		**4.**Hystrix 异常处理 fallback 的回滚情况:
 
 ​			①FAILURE: 实行失败，抛出异常
 
@@ -752,6 +752,160 @@ client:
 ​		有一种异常是不会出发回滚，BAD_REQUEST,会抛出 HystrixBadRequestException,这类异常是由非法参数或
 
 者系统异常导致的，对于这类异常可以根据响应创建对应的异常封装或者直接处理。
+
+​		**5.**hystrix 的**配置**参数（https://github.com/Netflix/Hystrix/wiki/Configuration）
+
+​		下面列举一些常用的，可能需要改动的配置
+
+​	隔离策略：HystrixCommandkey  如果不配的话 默认是方法名
+
+​		默认值：`THREAD` (see `ExecutionIsolationStrategy.THREAD`)
+
+​		可选值 ：SEMAPHORE、THREAD
+
+​		默认属性 ：hystrix.command.default.execution.isolation.strategy
+
+​		实例属性 : hystrix.command.*HystrixCommandKey*.execution.isolation.strategy
+
+​	配置hystrixCommand 命令执行超时事件，单位是毫秒
+
+​		默认值：1000
+
+​		默认属性： hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds
+
+​		实例属性：hystrix.command.HystrixCommandKey.execution.isolation.thread.timeoutInMilliseconds
+
+​	配置HystrixCommand 命令执行超时是否开启
+
+​		默认值： true
+
+​		默认属性： hystrix.command.default.execution.timeout.enabled
+
+​		实例属性：hystrix.command.HystrixCommandKey.execution.timeout.enabled
+
+​	配置HystrixCommand 在发生超时时是否应中断执行
+
+​		默认值: false
+
+​		默认属性: hystrix.command.default.execution.isolation.thread.interruptOnCancel
+
+​		实例属性: hystrix.command.HystrixCommandKey.execution.isolation.thread.interruptOnCancel
+
+​	当隔离策略是信号量时，允许的最大请求数,如果达到此最大并发限制，则将拒绝后续请求
+
+​		默认值：10
+
+​		默认属性： hystrix.command.default.execution.isolation.semaphore.maxConcurrentRequests
+
+​		实例属性： hystrix.command.HystrixCommandKey.execution.isolation.semaphore.maxConcurrentRequests
+
+​	断路器设置打开fallback 并启动fallback的最小错误比率（=或者大于 都会打开）
+
+​		默认值：50
+
+​		默认属性：hystrix.command.default.circuitBreaker.errorThresholdPercentage
+
+​		实例属性：hystrix.command.HystrixCommandKey.circuitBreaker.errorThresholdPercentage
+
+​	强制打开断路器，拒绝所有请求
+
+​		默认值：false
+
+​		默认属性：hystrix.command.default.circuitBreaker.forceOpen
+
+​		实例属性：hystrix.command.HystrixCommandKey.circuitBreaker.forceOpen
+
+​	当为线程隔离时，核心线程池大小
+
+​		默认值：10
+
+​		默认属性：hystrix.threadpool.default.coreSize
+
+​		实例属性：hystrix.threadpool.HystrixThreadPoolKey.coreSize
+
+​	当为线程隔离时,做大线程池大小配置，在1.5.9 之前 核心和最大始终相等，在1.5.9版本之后需要配置
+
+​	allowMaximumSizeToDivergeFromCoreSize 为true
+
+​		默认值：10
+
+​		默认属性：hystrix.threadpool.default.maximumSize
+
+​		实例属性：hystrix.threadpool.HystrixThreadPoolKey.maximumSize
+
+​	allowMaximumSizeToDivergeFromCoreSize 
+
+​		默认值：false
+
+​		默认属性：hystrix.threadpool.default.allowMaximumSizeToDivergeFromCoreSize
+
+​		实例属性：hystrix.threadpool.HystrixThreadPoolKey.allowMaximumSizeToDivergeFromCoreSize
+
+​		**注意：** 实际生产中，需要对超时时间、线程池大小、信号量等进行修改，具体结合业务进行分析
+
+​		一般情况下Ribbon的超时时间 短于 Hystrix超时时间
+
+​	**6.**Hystrix 线程调整和计算
+
+​		通过自我预判先发布到生产活着测试，然后查看它具体的运行情况，在调整为更符合业务的配置
+
+​		① 默认超时 1000ms 根据自己的业务调整
+
+​		② 线程池池默认10，根据业务调整
+
+​		③ 灰度发布，成功则保持，随时调整
+
+​		④生产环境运行超过24 小时
+
+​		⑤如果有系统告警和监控空，那么可以依靠他们捕捉问题
+
+​		⑥运行24小时之后，通过延迟百分位和流量来计算有意义的最低满足值
+
+​		⑦生产环境或者测试中实时修改，然后用仪表盘监控
+
+​		⑧断路器产生变化和影响，则需要再次确认这个配置
+
+​		计算的例子： ThreadPool 为10 ，峰值每秒 30个请求
+
+​						每秒请求峰值 * 99%的延迟百分比+预留缓冲值
+
+​						30* 0.2s+ 4=10 预留4个线程数
+
+​		Thread Timeout：预留个足够的时间 250ms 然后加上重试一次的中位数值
+
+​		Connect Timeout & Read Timeout： 100ms 和 250 ms
+
+​	![](.\assets\thread-configuration-1280.png)
+
+​	**7.**Hystrix 请求缓存
+
+​		Hystrix的 请求缓存是 Hystrix 在**同一个上下文**请求中缓存请求结果，在同一个请求中缓存，即在进行第一次调
+
+用结束后对结果缓存，然后接下来同参数的请求将会使用第一次的结果，缓存的生命周期只是在这一次的请求有效。
+
+​	HystrixCommand有两种方式，第一种继承，第二种注解，缓存也同时支持这两种
+
+​	1.初始化上下文
+
+​		缓存是在同一个上下文，要不然会报错，可以利用filter过滤器和Interceptor拦截器进行初始化，在这里使用一个
+
+​	拦截器来实现，HandlerInterceptor
+
+​	2.使用类开启其缓存
+
+​	3.使用注解开启缓存
+
+​	4.使用注解清除缓存
+
+​	5.小结
+
+​	@CacheResult 使用后结果会被缓存 要和 @HystrixCommand 注解一起使用
+
+​	@CacheRemove 清除缓存指定 commandKey
+
+​	@CacheKey 请求参数，默认讲方法的所有参数最为key与CacheResult和CacheRemove 组合使用
+
+​	
 
 ## 	5.Zuul
 

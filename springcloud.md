@@ -905,7 +905,45 @@ client:
 
 ​	@CacheKey 请求参数，默认讲方法的所有参数最为key与CacheResult和CacheRemove 组合使用
 
-​	
+​	**8.**Hystrix Request Collapser
+
+​		Hystrix Request Collapser 是针对多个（异步）请求调用当个后台依赖做的一种优化和节约网络开销的方法
+
+​		当发起多个请求，在没有请求聚合和合并的情况下，会为每个请求开启一个线程，打开一个网络链接
+
+​		这会加重网络开销和线程数池资源，Collapser会把这些同一个后台的请求合并，只需要一个网络连接和
+
+​		占用一个连接池资源。**注意：需要上下文**
+
+​	**9.**Hystrix 线程传递以及并发策略
+
+​		Hystrix 提供了两种隔离模式进行请求操作，一种是信号量，一种是线程。
+
+​		如果是信号量，Hystrix在请求时会获取一个信号量，如果成功拿到，则继续进行请求，请求在一个线程中执行
+
+​		完毕，如果是线程隔离，Hystrix 会把请求放在线程池执行，这是有可能导致线程1的上下文在线程2是拿不到的
+
+​		Hystrix 接管后，请求放到线程池执行，导致上下文不一致
+
+​		解决
+
+①隔离策略修改为信号量 （不推介），大部分系统都是线程隔离
+
+```yml
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          strategy: SEMAPHORE
+          
+```
+
+②Hystrix 官方推介使用HystrixConcurrencyStrategy，实现其warpCallable方法，对于依赖ThreadLocal状态的系统至关重
+
+​	要，其实就是将上一个线程的东西传递给下一个
+
+
 
 ## 	5.Zuul
 

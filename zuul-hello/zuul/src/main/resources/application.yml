@@ -1,0 +1,16 @@
+server:
+  port: 5555
+spring:
+  application:
+    name: zuul
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+zuul:
+  routes:
+    client-a:
+      path: /client/**
+      serviceId: client-a  # 将/client/**   的url转到 client-a的服务实例上

@@ -730,14 +730,13 @@ client:
 
 ### 	2.实战
 
+#### 		**1.**hystrix1  普通断路器
 
-​		**1.**hystrix1  普通断路器
+#### 	        **2.**hystrix2  feign中使用断路器 
 
-​	        **2.**hystrix2  feign中使用断路器 
+#### 		**3.**hystrix- dashboard  仪表盘Dashboard+ turbine+缓存+异常+缓存+线程隔离+线程合并
 
-​		**3.**hystrix- dashboard  仪表盘Dashboard+ turbine
-
-​		**4.**Hystrix 异常处理 fallback 的回滚情况:
+#### 		**4.**Hystrix 异常处理 fallback 的回滚情况:
 
 ​			①FAILURE: 实行失败，抛出异常
 
@@ -753,7 +752,9 @@ client:
 
 者系统异常导致的，对于这类异常可以根据响应创建对应的异常封装或者直接处理。
 
-​		**5.**hystrix 的**配置**参数（https://github.com/Netflix/Hystrix/wiki/Configuration）
+#### 		**5.**hystrix 的**配置**参数
+
+​			（https://github.com/Netflix/Hystrix/wiki/Configuration）
 
 ​		下面列举一些常用的，可能需要改动的配置
 
@@ -845,7 +846,7 @@ client:
 
 ​		一般情况下Ribbon的超时时间 短于 Hystrix超时时间
 
-​	**6.**Hystrix 线程调整和计算
+#### 	**6.**Hystrix 线程调整和计算
 
 ​		通过自我预判先发布到生产活着测试，然后查看它具体的运行情况，在调整为更符合业务的配置
 
@@ -877,7 +878,7 @@ client:
 
 ​	![](.\assets\thread-configuration-1280.png)
 
-​	**7.**Hystrix 请求缓存
+#### 	**7.**Hystrix 请求缓存
 
 ​		Hystrix的 请求缓存是 Hystrix 在**同一个上下文**请求中缓存请求结果，在同一个请求中缓存，即在进行第一次调
 
@@ -905,7 +906,7 @@ client:
 
 ​	@CacheKey 请求参数，默认讲方法的所有参数最为key与CacheResult和CacheRemove 组合使用
 
-​	**8.**Hystrix Request Collapser
+#### 	**8.**Hystrix Request Collapser
 
 ​		Hystrix Request Collapser 是针对多个（异步）请求调用当个后台依赖做的一种优化和节约网络开销的方法
 
@@ -915,7 +916,7 @@ client:
 
 ​		占用一个连接池资源。**注意：需要上下文**
 
-​	**9.**Hystrix 线程传递以及并发策略
+#### 	**9.**Hystrix 线程传递以及并发策略
 
 ​		Hystrix 提供了两种隔离模式进行请求操作，一种是信号量，一种是线程。
 
@@ -941,11 +942,125 @@ hystrix:
 
 ②Hystrix 官方推介使用HystrixConcurrencyStrategy，实现其warpCallable方法，对于依赖ThreadLocal状态的系统至关重
 
-​	要，其实就是将上一个线程的东西传递给下一个
+​	要，其实就是将上一个线程的东西传递给下一个线程
 
+#### **10.** 注解详解
 
+​	@HystrixCommand 
+
+​	commandKey :全局唯一标识符，如果不配置默认是方法名
+
+​	defaultFallback : 默认的fallback方法，不能有入参，返回值与方法相同，fallbackMethod 更优先
+
+​	fallbackMethod： fallback的方法，签名要跟原方法一致，而且在同一个类里
+
+​	ignoreExceptions：忽略哪些异常，直接抛出，而不触发fallback
+
+​	commandProperties：配置一些命名的属性，如执行的隔离策略等
+
+​	threadPoolProperties：配置一些线程池相关的属性
+
+​	groupKey：全局唯一表示服务分组的名称，内部会根据这个键值展示 统计数和仪表盘等信息
+
+​			默认的线程划分是根据这命令组的名称进行的，一般会在创建HystrixCommand 时指定命令组来实现
+
+​			默认的线程池划分
+
+​	threadPoolKey： 对服务的线程池信息进行设置，用于HystrixThreadPool监控、metrics、缓存等用途
+
+​	observableExecutionMode：执行命令的模式 默认EAGER 同步， LAZY 异步
 
 ## 	5.Zuul
+
+### 	1.概述
+
+​	Netflix 孵化，在动态路由、监控、弹性、服务治理以及安全方面起着举足轻重的作用，面向服务治理、服务编排的组
+
+​	件，Zuul 是从设备和网站到应用程序所有请求的前门，为内部服务提供可配置的对外URL到服务的映射关系，基于
+
+​	JVM的后端路由,基本功能：
+
+​		认证授权
+
+​		压力控制
+
+​		灰度发布
+
+​		动态路由
+
+​		负载削减
+
+​		静态响应处理
+
+​		主动流量管理
+
+​	内层是基于Servlet，本质组件是一系列Filter所构成的责任链。
+
+### 	2.入门案例
+
+​		zuul-hello
+
+### 	3.典型配置
+
+#### 		1.路由配置
+
+```yml
+#简单实例ServiceId 映射
+zuul:
+  routes:
+    client-a:
+      path: /client/**
+      serviceId: client-a  # 将/client/**   的url转到 client-a的服务实例上
+#同第一个
+zuul:
+  routes:
+    client-a: /client/**    # 将/client/**   的url转到 client-a的服务实例上
+#默认啥也不配
+zuul:
+  routes:
+    client-a:     # 默认将  /client-a/**   的url转到 client-a的服务实例上
+    
+#单实例url映射
+zuul:
+  routes:
+    client-a:
+      path: /client/**
+      url: http://localhost:7070 #将 /client-a/**  直接映射到 这个路径
+#多实例路由，默认情况下Zuul 会使用Eureka中集成的基本负载均衡功能，如果想使用Ribbon的负载均衡，需要指定一个
+#serviceId，此操作需要禁止Ribbon使用Eureka
+ribbon:
+  eureka:
+    enabled: false #禁止Ribbon使用Eureka
+
+ribbon-client-a:
+  ribbon:
+    listOfServers: http://localhost:7070,http://localhost:7071
+    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule #对应的配置类 上面列表
+    NIWSSerrverListClassName:  com.netflix.loadbalancerConfigurationBasedServerList  #基于配置的实例
+      
+```
+
+#### 		2.功能配置
+
+### 	4.Filter
+
+### 	5.权限集成
+
+### 	6.限流
+
+### 	7.动态路由
+
+### 	8.灰度发布
+
+### 	9.文件上传
+
+### 	10.实用技巧
+
+### 	11.多层负载
+
+### 	12.应用优化
+
+### 	13原理与源码解析	
 
 # 2.进阶实战
 

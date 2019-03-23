@@ -1037,12 +1037,104 @@ ribbon-client-a:
     listOfServers: http://localhost:7070,http://localhost:7071
     NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule #对应的配置类 上面列表
     NIWSSerrverListClassName:  com.netflix.loadbalancerConfigurationBasedServerList  #基于配置的实例
+#本地跳转
+zuul:
+  routes:
+    client-a:
+      path: /client/**
+      serviceId: forword:/client  # 将/client/**  的url转到 本地的服务实例上 /client 的url controller
+#相同路径的加载规则 后面的会覆盖 前面的
+zuul:
+  routes:
+    client-a:
+      path: /client/**
+      serviceId: client-a  # 将/client/**   的url转到 client-a的服务实例上
+    client-b:
+      path: /client/**
+      serviceId: client-a  # 将/client/**   的url转到 client-b的服务实例上
+#路由配置的 通配符
+# /** 匹配任意数量的路径与字符  /client/add  /client/ff/gg
+# /*  匹配任意数量字符  /client/dddddd  /client/sddd
+# /？ 匹配单个字符     /client/a /client/b
       
 ```
 
 #### 		2.功能配置
 
+```yml
+#路由前缀
+zuul:
+  routes:
+    client-a:
+      path: /client/**
+      serviceId: client-a
+      stripPrefix: false #禁止去掉前缀 /pre/client/aa 会被转到 client-a  的 /pre/client/aa
+  prefix: pre  #通用的路有前缀  /pre/client/aa 会被转到 client-a  的 /client/aa
+  
+  
+#忽略
+zuul:
+  ignored-services: client-b #忽略的服务
+  ignored-patterns: /**/dev/** #忽略的接口 
+# 切断敏感信息
+zuul:
+  routes:
+    client-a:
+      path: /client/**
+      serviceId: client-a
+      sensitiveHeaders: Cookie,Set-Cookie,Authorization #不想传给下游的信息
+#重定向 不想暴露真实地址
+zuul:
+  routes:
+    client-a:
+      path: /client/**
+      serviceId: client-a
+  add-host-header: true 
+#重试 配合Ribbon重试 此功能慎用
+zuul:
+  routes:
+    client-a:
+      path: /client/**
+      serviceId: client-a
+  add-host-header: true
+  retryable: true #开启重试
+ribbon:
+  MaxAutoRetries: 1#同一个服务的重试次数（除去第一次）
+  MaxAutoRetriesNextServer: 1 #切换相同服务器的数量
+
+```
+
 ### 	4.Filter
+
+​	zuul 的 filter 责任链 组成了 丰富的网关操作。
+
+​	类型：路由前，路由后，路由中
+
+​	顺序： 同一类型的，设置filterOrder() 设定其执行顺序
+
+​	条件：filter执行的条件
+
+​	效果：执行filter，产生的效果
+
+​	filter 之间不直接通信，在请求线程中通过RequestContext共享状态（底层是ThreadLocal 实现的），
+
+​	当然也可以通过ThreadLocal 收集共享状态和数据（还扩展了ConcurrentHashMap）
+
+​	![1553349453125](.\assets\1553349453125.png)
+
+大致如图：
+
+​	![](.\assets\1.jpg)
+
+在这个**生命周期** pre： 可以对请求做预处理，限流，鉴权等
+
+​			route：路由动作的执行者，httpClient或者Ribbon构建或发送原始http请求的地方，目前支持okHttp
+
+​			post: 后处理
+
+​			error：发生异常处理，可以做全局异常处理
+
+
 
 ### 	5.权限集成
 

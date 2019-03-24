@@ -1106,7 +1106,9 @@ ribbon:
 
 ### 	4.Filter
 
-​	zuul 的 filter 责任链 组成了 丰富的网关操作。
+#### 	1.原理
+
+​	 zuul 的 filter 责任链 组成了 丰富的网关操作。
 
 ​	类型：路由前，路由后，路由中
 
@@ -1134,7 +1136,25 @@ ribbon:
 
 ​			error：发生异常处理，可以做全局异常处理
 
+#### 2.原生filter
 
+​	在zuul 项目上 加入Spring boot Actuator  
+
+​	访问 其 路径/actuator/routes 可查看zuul server 生成的路由规则 再加上 details 可查看明细
+
+​	访问 其 路径/actuator/filters 可查看zuul server 已注册生效的 filter
+
+​	![](.\assets\2.jpg)
+
+​	以上便是使用注解 @EnableZuulProxy 之后的安装filter
+
+​			若是@EnableZuulServer 将缺少 PreDecorationFilter、RibbonRoutingFilter、SimpleHostRoutingFilter
+
+​		 以上自带的都可以禁止，语法为：zuul.< className>.< filterType>.disable=true
+
+​		比如：禁止 SendErrorFilter   zuul.SendErrorFilter.error.disable=true
+
+​	
 
 ### 	5.权限集成
 

@@ -14,8 +14,3 @@ zuul:
     client-a:
       path: /client/**
       serviceId: client-a
-  add-host-header: true
-  retryable: true #开启重试
-ribbon:
-  MaxAutoRetries: 1#同一个服务的重试次数（除去第一次）
-  MaxAutoRetriesNextServer: 1 #切换相同服务器的数量

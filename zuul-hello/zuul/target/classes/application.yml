@@ -13,4 +13,4 @@ zuul:
   routes:
     client-a:
       path: /client/**
-      serviceId: client-a # ��/client/**   ��urlת�� client-a�ķ���ʵ����
+      serviceId: client-a

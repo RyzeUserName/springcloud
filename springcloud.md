@@ -1154,7 +1154,15 @@ ribbon:
 
 ​		比如：禁止 SendErrorFilter   zuul.SendErrorFilter.error.disable=true
 
-​	
+#### 	3.多级业务处理
+
+​	 我们可以吧一组业务逻辑细分，然后封装到一个紧密结合的Filter中，设置处理顺序，组成一组Filter链
+
+​	1--定义自己的Filter  extend ZuulFilter 
+
+​	2 ---业务实战
+
+​	![](.\assets\业务.jpg)
 
 ### 	5.权限集成
 

@@ -1196,6 +1196,8 @@ ribbon:
 
 #### 	2.OAuth2.0+JWT 实战
 
+​	OAuth2.0 扩展: OAuth 2.0 is the industry-standard protocol for authorization
+
 ### 	6.限流
 
 ### 	7.动态路由

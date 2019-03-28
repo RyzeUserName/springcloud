@@ -1,0 +1,28 @@
+spring:
+  application:
+    name: zuul-server
+server:
+  port: 5555
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    prefer-ip-address: true
+zuul:
+  routes:
+    client-a: /client/**
+  ratelimit:
+    key-prefix: springcloud-book # 前缀
+    enabled: true # 开启
+    repository:   IN_MEMORY #key 的存储方式
+    behind-proxy: true #表示代理之后
+    default-policy: #全局限流策略 可单独细化到服务粒度
+      limit: 2 #在一个单位时间窗口的请求数量
+      quota: 1 #在一个单位时间窗口的请求时间限制
+      refresh-interval: 3 # 单位时间窗口
+      type:
+        - user #用户粒度
+        - origin #客户端粒度
+        - url #url 粒度

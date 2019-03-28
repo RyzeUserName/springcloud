@@ -1170,7 +1170,7 @@ ribbon:
 
 ​	1--定义自己的Filter  extend ZuulFilter 
 
-​	2 ---业务实战
+​	2 ---业务实战  zuul-hello
 
 ​	![](.\assets\业务.jpg)
 
@@ -1196,6 +1196,8 @@ ribbon:
 
 #### 	2.OAuth2.0+JWT 实战
 
+​	zuul-oauth-jwt
+
 ​	OAuth2.0 扩展: OAuth 2.0 is the industry-standard protocol for authorization
 
 ### 	6.限流
@@ -1220,29 +1222,58 @@ ribbon:
 
 #### 	2.限流实战
 
+​	zuul-limit
+
 ​	选择spring-cloud-zuul-ratelimit 针对Zuul 编写的限流库 提供了多粒度策略：
 
+​	版本号 2.0.6.RELEASE
+
 - user：认证用户或者匿名，针对某个用户粒度限流
-
 - origin: 客户机ip，针对请求客户机ip 粒度进行限流
-
 - url: 特定url，针对某个请求url粒度进行限流
-
 - serviceId:特定服务，针对某个服务id粒度进行限流
-
 - IN_MEMEORY:基于本地内存，底层是ConcurrentHashMap
-
 - REDIS: Redis k/v存储
-
 - CONSUL: Consul的K/V存储
-
 - JPA: SpringData JPA ,基于数据库
-
 - BUKETSJ：一个使用Java编写的基于令牌桶算法的限流库，四种模式，JCache、Hazelcast、Apache Ignite、Inifinispan,其中后三个支持异步
 
-  
-
 ### 	7.动态路由
+
+#### 1.概述
+
+​	目前两种方案解决：
+
+- spring config+bus 动态刷新配置文件
+- 重新zull 的配置读取方式，采用事件刷新机制，基于数据库
+
+#### 2.原理
+
+1. DiscoveryClientRouteLocator
+
+   此类是zuul中对于路由配置信息读取与新节点注册变更的操作类
+
+   ![1553764946450](.\assets\1553764946450.png)
+
+2. SimpleRouteLocator
+
+   ![1553765849698](.\assets\1553765849698.png)
+
+3. ZuulServerAutoConfiguration
+
+   ![1553767894523](.\assets\1553767894523.png)
+
+   
+
+4. ZuulHandlerMapping
+
+   ![1553768703649](.\assets\1553768703649.png)
+
+
+
+​	其实在构建动态路由的时候，只需要重写SimpleRouteLocator类的locateRoutes ()方法，并实现RefreshableRouteLocator接口的refresh()方法,再在内部调用SimpleRouteLocator类的doRefresh()方法，就可以构建起一个由zuul内部事件触发的自定义动态路由加载器
+
+#### 3.基于DB的动态路由实战
 
 ### 	8.灰度发布
 

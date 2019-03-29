@@ -24,6 +24,10 @@ ribbon:
   ReadTimeout: 30000
   eager-load:
     enabled: true
+  httpClient:
+    enabled: false
+  okhttp:
+    enabled: true
 zuul:
   routes:
     client-a: /client/**

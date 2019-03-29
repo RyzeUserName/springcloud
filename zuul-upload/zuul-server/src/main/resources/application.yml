@@ -24,6 +24,14 @@ ribbon:
   ReadTimeout: 30000
   eager-load:
     enabled: true
+  httpClient:
+    enabled: false
+  okhttp:
+    enabled: true
+  MaxAutoRetries: 1 #对第一次请求服务的重试次数
+  MaxAutoRetriesNextServer: 1 #要重试的下一个服务对的最大数量（不包括第一个服务）
+  OkToRetryOnAllOperations: true
 zuul:
   routes:
     client-a: /client/**
+  retryable: true

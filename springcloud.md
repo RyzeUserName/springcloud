@@ -1323,13 +1323,128 @@ ribbon:
 
 3. okhttp 替换httpClient
 
+   apache 的httpClient 难以扩展等诸多原因，已被许多技术栈舍弃
+
+   okhttp 优点：
+
+   ​	支持SPDY，可以合并请求（同一个HOST）
+
+   ​	链接复用机制
+
+   ​	使用GZIP减少传输
+
+   ​	对响应缓存，避免重复网络
+
+   引入依赖：
+
+   ​	 
+
+   ```xml
+   <dependency>
+       <groupId>com.squareup.okhttp3</groupId>
+       <artifactId>okhttp</artifactId>
+   </dependency>
+   ```
+
    
+
+   ```yml
+   ribbon:
+     httpClient:
+       enabled: false
+     okhttp:
+       enabled: true
+   ```
 
 4. 重试机制
 
+   引入依赖：
+
+   ```xml
+   <!-- https://mvnrepository.com/artifact/org.springframework.retry/spring-retry -->
+   <dependency>
+       <groupId>org.springframework.retry</groupId>
+       <artifactId>spring-retry</artifactId>
+   </dependency>
+   
+   ```
+
+   
+
+   ```yml
+   spring:
+     cloud:
+       loadbalancer:
+         retry:
+           enabled: true
+   ribbon:
+     ConnectTimeout: 3000
+     ReadTimeout: 30000
+     MaxAutoRetries: 1 #对第一次请求服务的重试次数
+     MaxAutoRetriesNextServer: 1 #要重试的下一个服务对的最大数量（不包括第一个服务）
+     OkToRetryOnAllOperations: true
+   zuul:
+     retryable: true
+           
+   ```
+
+   zuul.route.xxxx.retryable= true 开启单个映射规则的重试
+
+   
+
 5. Header传递
 
+   ​	继承ZuulFilter ，run方法里
+
+   ```java
+   RequestContext currentContext = RequestContext.getCurrentContext();
+   currentContext.addZuulRequestHeader("name","vale");
+   ```
+
 6. 整合swagger2调试
+
+   ```xml
+   <dependency>
+       <groupId>io.springfox</groupId>
+       <artifactId>springfox-swagger-ui</artifactId>
+       <version>2.7.0</version>
+   </dependency>
+   <dependency>
+       <groupId>io.springfox</groupId>
+       <artifactId>springfox-swagger2</artifactId>
+       <version>2.7.0</version>
+   </dependency>
+   ```
+
+   ```java
+   @Configuration
+   @EnableSwagger2
+   public class SwaggerConfig {
+   
+   @Autowired
+   ZuulProperties properties;
+   
+   @Primary
+   @Bean
+   public SwaggerResourcesProvider swaggerResourcesProvider() {
+   return () -> {
+   List<SwaggerResource> resources = new ArrayList<>();
+   properties.getRoutes().values().stream()
+   .forEach(route -> resources.add(createResource(route.getServiceId(), route.getServiceId(), "2.0")));
+   return resources;
+   };
+   }
+   
+   private SwaggerResource createResource(String name, String location, String version) {
+   SwaggerResource swaggerResource = new SwaggerResource();
+   swaggerResource.setName(name);
+   swaggerResource.setLocation("/" + location + "/v2/api-docs");
+   swaggerResource.setSwaggerVersion(version);
+   return swaggerResource;
+   }
+   
+   }
+   ```
 
 ### 	11.多层负载
 

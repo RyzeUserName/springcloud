@@ -1297,7 +1297,37 @@ ribbon:
 
 ### 	9.文件上传
 
+​	zuul-upload
+
+​	网关自己的上传controller，走的是mvc 
+
+​	网关映射的路径的客户端，可以在网关选择走zuul servlet而不走网关的mvc 
+
+​	只需要在代理路径前 加上zuul 当然可以解决字符乱码问题
+
 ### 	10.实用技巧
+
+1. 饥饿加载 
+
+   zuul 内部使用的是Ribbon调用远程服务，由于Ribbon的原因，初始化是懒加载。
+
+   ```yml
+   ribbon:
+     eager-load:
+       enabled: true
+   ```
+
+2. 请求体修改
+
+   
+
+3. okhttp 替换httpClient
+
+4. 重试机制
+
+5. Header传递
+
+6. 整合swagger2调试
 
 ### 	11.多层负载
 

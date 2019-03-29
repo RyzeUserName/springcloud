@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: zuul-server
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 100MB
+      max-request-size: 100MB
+      file-size-threshold: 1MB #当上传的文件达到1MB的时候进行磁盘写入
+      location: / #上传的临时目录
+
+server:
+  port: 5555
+  # hystrix 默认是1s 上传达文件要避免超时
+hystrix:
+  command:
+    default:
+     execution:
+       isolation:
+         thread:
+           timeoutInMilliseconds: 30000
+ribbon:
+  ConnectTimeout: 3000
+  ReadTimeout: 30000
+  eager-load:
+    enabled: true
+zuul:
+  routes:
+    client-a: /client/**

@@ -22,6 +22,8 @@ hystrix:
 ribbon:
   ConnectTimeout: 3000
   ReadTimeout: 30000
+  eager-load:
+    enabled: true
 zuul:
   routes:
     client-a: /client/**

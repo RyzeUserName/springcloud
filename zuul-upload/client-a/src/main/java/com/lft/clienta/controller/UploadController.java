@@ -25,4 +25,9 @@ public class UploadController {
         FileCopyUtils.copy(bytes, file1);
         return file1.getAbsolutePath();
     }
+
+    @PostMapping("/test")
+    public String test(@RequestParam("test") String file) throws IOException {
+        return file;
+    }
 }

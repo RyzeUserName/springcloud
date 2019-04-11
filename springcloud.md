@@ -1488,6 +1488,12 @@ ribbon:
 
 ​	![https://raw.githubusercontent.com/RyzeUserName/springcloud/master/assets/zuul生命周期.jpg?token=AiWh_0DUpU23a_y3Nacn0PhmmYLFzUzIks5crxVywA%3D%3D](https://raw.githubusercontent.com/RyzeUserName/springcloud/master/assets/zuul%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F.jpg?token=AiWh_0DUpU23a_y3Nacn0PhmmYLFzUzIks5crxVywA%3D%3D)
 
+​	调用过程：
+
+​		![](<https://raw.githubusercontent.com/RyzeUserName/springcloud/master/assets/zuul%E8%B0%83%E7%94%A8%E8%BF%87%E7%A8%8B.jpg?token=AiWh_ynNM8tJZ44zrAcRIMQrFstj2S2Qks5crx8QwA%3D%3D)
+
+
+
 
 
 # 2.进阶实战

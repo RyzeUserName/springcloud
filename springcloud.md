@@ -1462,14 +1462,29 @@ ribbon:
 
 		1. 容器优化（tomcat 换成 Undertow）
 		2. 组件优化 (Hystrix线程优化,Ribbon,HttpClient与OkHttp)
-			1. zuul 默认集成 Hystrix，由于断路器懒加载，第一次请求很容易出问题解				 决： 加大触发断路器时间/禁止掉断路器；
+			1. zuul 默认集成 Hystrix，由于断路器懒加载，第一次请求很容易出问题解决： 加大触发断路器时间/禁止			掉断路器；
 				hystrix的隔离策略，外网线程隔离，内网信号量隔离
 			2. Ribbon 超时时间设置，设置太小导致请求失败，设置太大导致熔断变差
 		3. JVM参数优化
-			
+			网关需要的是吞吐量。推介晒用Parallel Scavenge收集器，即并行的垃圾回收器
+			-XX:+UseAdaptiveSizePolicy 打开，JVM会自动选择年轻代区的大小和响应的Survivor区比例
+			但是作者测试的并不理想，建议关闭，改为-XX:-UseAdaptiveSizePolicy，并根据实际情况调整Eden区
+			和Survivor区的比例。以降低FGC
+			-XX:TargetSurvivorRatio,即Servivor区对象的利用率，默认是50%，建议加大，将FGC留给新生代
+			老年代使用Parallel Old收集器，让网关应用彻底面向吞吐量 参数-XX:+ScavengeBeforeFullGC
+			FGC前进行一次YGC
 		4. 内部优化
+			zuul.max.host.connections 属性拆成了
+			zuul.host.maxTotalConnections =200 // 服务HTTP 客户端最大连接数
+			zuul.host.maxPerRouteConnections =20  // 每个路由规则 HTTP客户端最大连接数
+			使用httpClient是有效的，如果是OkHttp则无效
+			使用serviceId映射走的时候 ribbon ribbon.ReadTimeout  ribbon.SocketTimeout生效
+			视同url映射，应该设置zuul.hostconnect-timeout-millis与zuul.host.socket-timeout-millis参数
+			
 
 ### 	13原理与源码解析	
+
+​	
 
 # 2.进阶实战
 

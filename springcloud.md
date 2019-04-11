@@ -1484,7 +1484,11 @@ ribbon:
 
 ### 	13原理与源码解析	
 
-​	
+​	生命周期:
+
+​	![https://raw.githubusercontent.com/RyzeUserName/springcloud/master/assets/zuul生命周期.jpg?token=AiWh_0DUpU23a_y3Nacn0PhmmYLFzUzIks5crxVywA%3D%3D](https://raw.githubusercontent.com/RyzeUserName/springcloud/master/assets/zuul%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F.jpg?token=AiWh_0DUpU23a_y3Nacn0PhmmYLFzUzIks5crxVywA%3D%3D)
+
+
 
 # 2.进阶实战
 

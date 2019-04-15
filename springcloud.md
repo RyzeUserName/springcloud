@@ -1480,7 +1480,7 @@ ribbon:
 			使用httpClient是有效的，如果是OkHttp则无效
 			使用serviceId映射走的时候 ribbon ribbon.ReadTimeout  ribbon.SocketTimeout生效
 			视同url映射，应该设置zuul.hostconnect-timeout-millis与zuul.host.socket-timeout-millis参数
-			
+
 
 ### 	13原理与源码解析	
 
@@ -1492,9 +1492,50 @@ ribbon:
 
 ​		![](<https://raw.githubusercontent.com/RyzeUserName/springcloud/master/assets/zuul%E8%B0%83%E7%94%A8%E8%BF%87%E7%A8%8B.jpg?token=AiWh_ynNM8tJZ44zrAcRIMQrFstj2S2Qks5crx8QwA%3D%3D)
 
+那么@EnableZuulProxy
+
+​	@EnableZuulServer 区别：
 
 
+![](<https://raw.githubusercontent.com/RyzeUserName/springcloud/master/assets/1555297176813.jpg>)
 
+![](<https://raw.githubusercontent.com/RyzeUserName/springcloud/master/assets/1555297097839.jpg>)
+
+ZuulProxy整合了断路器,从注释上看到ZuulProxy 加入了一些proxy filters
+
+ZuulProxy 导入ZuulProxyMarkerConfiguration 类中并没有什么 link to ZuulProxyAutoConfiguration
+
+ZuulServer 导入ZuulServerMarkerConfiguration 类中并无什么 link to ZuulServerAutoConfiguration
+
+发现 ZuulProxyAutoConfiguration 继承 ZuulServerAutoConfiguration 
+
+ZuulServerAutoConfiguration 的功能：
+
+- 初始化配置加载器
+- 初始化路由定位器
+- 初始化路由映射器
+- 初始化配置刷新监听器
+- 初始化zuulServlet加载器
+- 初始化zuulController
+- 初始化Filter执行解析器
+- 初始化一些Filter
+- 初始化Metrix监控
+
+ZuulProxyAutoConfiguration 除了以上功能，还额外的功能：
+
+- 初始化服务注册、发现监听器
+- 初始化服务列表监听器
+- 初始化Zuul自定义Endpoint
+- 初始化一些ZuulServverAutoConfiguration中没有的Filter
+- 引入HTTP客户端的两种方式：HttpClient与OkHttp
+
+装在完成之后就成了完整的周期，下面具体实现：
+
+Filter 装载
+
+Filter链实现
+
+核心路由实现
 
 # 2.进阶实战
 

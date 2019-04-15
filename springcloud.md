@@ -1531,11 +1531,31 @@ ZuulProxyAutoConfiguration 除了以上功能，还额外的功能：
 
 装在完成之后就成了完整的周期，下面具体实现：
 
-Filter 装载
+**Filter 装载**
 
-Filter链实现
+![](https://raw.githubusercontent.com/RyzeUserName/springcloud/master/assets/filter%E8%BF%87%E7%A8%8B.jpg)
 
-核心路由实现
+ZuulServerAutoConfiguration 类中的 ZuulFilterConfiguration 类是Zuul的Filter初始化的入口
+
+![](https://raw.githubusercontent.com/RyzeUserName/springcloud/master/assets/ZuulFilterConfiguration.png)
+
+FilterLoader 可以看做filter仓库
+
+FilterRegistry 可以看作是 FilterLoader  与外界交互的媒介，可条件读取
+
+下一步初始化filter 到
+
+![](https://raw.githubusercontent.com/RyzeUserName/springcloud/master/assets/FilterInitli.png)
+
+
+
+**Filter链实现**
+
+不同类型的执行顺序是不同的，FilerProcessor通过FilterLoader获取一个类型的Filer，根据对应的order 排序执行
+
+**核心路由实现**
+
+![](https://raw.githubusercontent.com/RyzeUserName/springcloud/master/assets/%E6%A0%B8%E5%BF%83.jpg)
 
 # 2.进阶实战
 

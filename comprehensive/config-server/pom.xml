@@ -9,9 +9,9 @@
 		<relativePath>../pom.xml</relativePath> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.lft</groupId>
-	<artifactId>confiig-server</artifactId>
+	<artifactId>config-server</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>confiig-server</name>
+	<name>config-server</name>
 	<description>Demo project for Spring Boot</description>
 
 

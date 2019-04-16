@@ -1,0 +1,22 @@
+server:
+  port: 8761
+
+
+eureka:
+  instance:
+    appname: localhost
+    prefer-ip-address: true
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+    register-with-eureka: false   #注册自己 单个的时候关闭
+    fetch-registry: false # 指示此客户端是否应从eureka服务器获取eureka注册表信息。
+  server:
+    enable-self-preservation: false # 自我保护
+    eviction-interval-timer-in-ms: 30000 #主动失效检测间隔 默认60s，可以设置短些
+
+spring:
+  application:
+    name: eureka-server
+
+

@@ -1557,6 +1557,32 @@ FilterRegistry 可以看作是 FilterLoader  与外界交互的媒介，可条�
 
 ![](https://raw.githubusercontent.com/RyzeUserName/springcloud/master/assets/%E6%A0%B8%E5%BF%83.jpg)
 
+## 6.综合案例
+
+### 	1.说明
+
+​		注册中心Eureka，配置中心Spring Cloud Config,API 网关Zuul，客户端负载均衡Ribbon，断路器Hystrix，同时后端包含两个业务服务，一个用户服务sc-user-service,一个数据服务sc-data-service
+
+​		技术的话：请求到Ngnix，打开前台界面 ，填完数据发送请求，到达Ngnix,对网关负载，动态路由到UserService中的服务，从Ribbon中选择一个实例进行调用，在调用第三方的数据服务DataService实例调用，返回数据
+
+​		父工程    comprehensive
+
+​		公共      commom
+
+​		配置中心   confiig-server     9090
+
+​		注册中心  eureka-server     8761
+
+​		网关     zuul-server                 7777
+
+​		仪表盘	hystrix-dashboard    9099
+
+​		用户服务  user-service   9091
+
+​		数据服务 data-service.   8099
+
+​		
+
 # 2.进阶实战
 
 ## 	1.Config
@@ -1566,8 +1592,6 @@ FilterRegistry 可以看作是 FilterLoader  与外界交互的媒介，可条�
 ## 	3.全链路监控
 
 ## 	4.Gateway
-
-​	
 
 # 3.解决方案
 

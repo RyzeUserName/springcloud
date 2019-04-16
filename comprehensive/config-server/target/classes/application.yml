@@ -6,7 +6,7 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/RyzeUserName/springcloud.git
-          search-paths: comprehensive/commom
+          uri: https://gitee.com/zhudeming/spring-cloud-config.git
+          search-paths: SC-BOOK-CONFIG
   application:
     name: config-server

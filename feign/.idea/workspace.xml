@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="4afd6399-4bb9-4317-97a8-07c988dfba4c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../comprehensive/common/src/main/java/com/lft/common/config/CommonConfiguration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../comprehensive/common/src/main/java/com/lft/common/context/HystrixThreadCallable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../comprehensive/common/src/main/java/com/lft/common/context/HystrixThreadLocal.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../comprehensive/common/src/main/java/com/lft/common/context/SpringCloudHystrixConcurrencyStrategy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../comprehensive/common/src/main/java/com/lft/common/context/SpringContextManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../comprehensive/common/src/main/java/com/lft/common/context/UserContextHolder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../comprehensive/common/src/main/java/com/lft/common/exception/BaseException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../comprehensive/common/src/main/java/com/lft/common/exception/BaseExceptionBody.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../comprehensive/common/src/main/java/com/lft/common/exception/CommonError.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../comprehensive/common/src/main/java/com/lft/common/intercepter/FeignUserContextInterceptor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../comprehensive/common/src/main/java/com/lft/common/intercepter/RestTemplateUserContextInterceptor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../comprehensive/common/src/main/java/com/lft/common/intercepter/UserContextInterceptor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../comprehensive/common/src/main/java/com/lft/common/util/AuthUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../comprehensive/common/src/main/java/com/lft/common/util/ExceptionUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../comprehensive/common/src/main/java/com/lft/common/util/HttpConvertUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../comprehensive/common/src/main/java/com/lft/common/vo/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../comprehensive/common/src/main/resources/META-INF/spring.factories" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../comprehensive/data-service/src/main/java/com/lft/dataservice/config/DataConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../comprehensive/data-service/src/main/java/com/lft/dataservice/controller/DataController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../comprehensive/user-service/src/main/java/com/lft/userservice/controller/UserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../comprehensive/user-service/src/main/java/com/lft/userservice/service/IUserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../comprehensive/user-service/src/main/java/com/lft/userservice/service/dataservice/DataService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../comprehensive/user-service/src/main/java/com/lft/userservice/service/fallback/UserClientFallback.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../comprehensive/user-service/src/main/java/com/lft/userservice/service/impl/UserServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../comprehensive/zuul-server/src/main/java/com/lft/zuulserver/filter/AuthFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../comprehensive/zuul-server/src/main/java/com/lft/zuulserver/filter/ZuulFallback.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../comprehensive/commom/.mvn/wrapper/MavenWrapperDownloader.java" beforeDir="false" afterPath="$PROJECT_DIR$/../comprehensive/common/.mvn/wrapper/MavenWrapperDownloader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../comprehensive/commom/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../comprehensive/common/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../comprehensive/commom/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../comprehensive/common/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../comprehensive/commom/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../comprehensive/common/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../comprehensive/commom/src/main/java/com/lft/commom/CommomApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../comprehensive/commom/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../comprehensive/data-service/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../comprehensive/commom/src/test/java/com/lft/commom/CommomApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/../comprehensive/common/src/test/java/com/lft/common/CommomApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../comprehensive/config-server/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../comprehensive/config-server/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../comprehensive/config-server/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../comprehensive/config-server/target/classes/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../comprehensive/data-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../comprehensive/data-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../comprehensive/data-service/src/main/java/com/lft/dataservice/DataServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../comprehensive/data-service/src/main/java/com/lft/dataservice/DataServiceApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../comprehensive/data-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../comprehensive/hystrix-dashboard/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../comprehensive/eureka-server/target/classes/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../comprehensive/hystrix-dashboard/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../comprehensive/hystrix-dashboard/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../comprehensive/hystrix-dashboard/src/main/java/com/lft/hystrixdashboard/HystrixDashboardApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../comprehensive/hystrix-dashboard/src/main/java/com/lft/hystrixdashboard/HystrixDashboardApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../comprehensive/hystrix-dashboard/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../comprehensive/user-service/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../comprehensive/user-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../comprehensive/user-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../comprehensive/user-service/src/main/java/com/lft/userservice/UserServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../comprehensive/user-service/src/main/java/com/lft/userservice/UserServiceApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../comprehensive/user-service/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../comprehensive/zuul-server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../comprehensive/zuul-server/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../comprehensive/zuul-server/src/main/java/com/lft/zuulserver/ZuulServerApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../comprehensive/zuul-server/src/main/java/com/lft/zuulserver/ZuulServerApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../comprehensive/zuul-server/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../comprehensive/zuul-server/src/main/resources/application.yml" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/feign/hello/src/main/java/com/hello/HelloApplication.java">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/feign/hello/src/main/java/com/hello/controller/HelloController.java">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/feign/hello/src/main/java/com/hello/service/HelloService.java">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/feign/hello/src/main/java/com/hello/config/FeignConfig.java">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="JsFlowSettings">
+    <service-enabled>true</service-enabled>
+    <exe-path />
+    <annotation-enable>false</annotation-enable>
+    <other-services-enabled>true</other-services-enabled>
+    <auto-save>true</auto-save>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="alwaysUpdateSnapshots" value="true" />
+        <option name="localRepository" value="D:\local_maven" />
+        <option name="mavenHome" value="D:/maven" />
+        <option name="userSettingsFile" value="D:\maven\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-30" />
+    <option name="y" value="15" />
+    <option name="width" value="2580" />
+    <option name="height" value="1460" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="feign" type="b2602c69:ProjectViewProjectNode" />
+              <item name="feign" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="feign" type="b2602c69:ProjectViewProjectNode" />
+              <item name="feign" type="462c0819:PsiDirectoryNode" />
+              <item name="feign" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="feign" type="b2602c69:ProjectViewProjectNode" />
+              <item name="feign" type="462c0819:PsiDirectoryNode" />
+              <item name="feign" type="462c0819:PsiDirectoryNode" />
+              <item name="gzip" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="feign" type="b2602c69:ProjectViewProjectNode" />
+              <item name="feign" type="462c0819:PsiDirectoryNode" />
+              <item name="feign" type="462c0819:PsiDirectoryNode" />
+              <item name="gzip" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="feign" type="b2602c69:ProjectViewProjectNode" />
+              <item name="feign" type="462c0819:PsiDirectoryNode" />
+              <item name="feign" type="462c0819:PsiDirectoryNode" />
+              <item name="gzip" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="feign" type="b2602c69:ProjectViewProjectNode" />
+              <item name="feign" type="462c0819:PsiDirectoryNode" />
+              <item name="feign" type="462c0819:PsiDirectoryNode" />
+              <item name="gzip" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="D:/nodejs/node" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="sshConsole" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="Application" factoryName="Application">
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <option name="TEST_OBJECT" value="class" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="TestNG">
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SshConsoleOptionsProvider">
+    <option name="myEncoding" value="UTF-8" />
+    <option name="myConnectionType" value="NONE" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="4afd6399-4bb9-4317-97a8-07c988dfba4c" name="Default Changelist" comment="" />
+      <created>1555428425554</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1555428425554</updated>
+      <workItem from="1555428433542" duration="87000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="87000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-7" y="-7" width="2062" height="1126" extended-state="6" />
+    <layout>
+      <window_info id="Image Layers" />
+      <window_info id="Designer" />
+      <window_info id="UI Designer" />
+      <window_info id="Capture Tool" />
+      <window_info id="Favorites" side_tool="true" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24974924" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" />
+      <window_info anchor="bottom" id="Version Control" />
+      <window_info anchor="bottom" id="Terminal" />
+      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="right" id="Palette" />
+      <window_info anchor="right" id="Theme Preview" />
+      <window_info anchor="right" id="Maven" />
+      <window_info anchor="right" id="Capture Analysis" />
+      <window_info anchor="right" id="Palette&#9;" />
+      <window_info anchor="right" id="Database" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/feign/hello/src/main/java/com/hello/HelloApplication.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/feign/hello/src/main/java/com/hello/controller/HelloController.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/feign/hello/src/main/java/com/hello/service/HelloService.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/feign/hello/src/main/java/com/hello/config/FeignConfig.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>

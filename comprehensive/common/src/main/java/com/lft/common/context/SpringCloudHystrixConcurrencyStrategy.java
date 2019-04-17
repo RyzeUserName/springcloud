@@ -19,7 +19,7 @@ import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
 /**
- * 传递信息
+ * Hystrix 自定义并发策略 传递threadlocal
  * @author Ryze
  * @date 2019/4/16 21:54
  */

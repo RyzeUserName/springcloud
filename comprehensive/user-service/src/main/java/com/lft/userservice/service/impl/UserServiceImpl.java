@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 
+import javax.annotation.Resource;
 import java.util.List;
 
 /**
@@ -15,7 +16,7 @@ import java.util.List;
  */
 @Component
 public class UserServiceImpl implements IUserService {
-    @Autowired
+    @Resource
     private DataService dataService;
 
     @Autowired
@@ -33,7 +34,7 @@ public class UserServiceImpl implements IUserService {
 
     @Override
     public List<String> getProviderData() {
-        List<String> result = restTemplate.getForObject("http://dataservice-service/getProviderData", List.class);
+        List<String> result = restTemplate.getForObject("http://data-service/getProviderData", List.class);
         return result;
     }
 }

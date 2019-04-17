@@ -1,10 +1,10 @@
 spring:
   application:
     name: zuul-server
-
-
 server:
   port: 7777
+
+
 eureka:
   client:
     service-url:
@@ -14,7 +14,7 @@ eureka:
 
 management:
   security:
-    enabled: true
+    enabled: false
   endpoints:
     web:
       exposure:

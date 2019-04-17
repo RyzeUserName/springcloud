@@ -27,6 +27,7 @@ public class UserContextInterceptor implements HandlerInterceptor {
             log.error("the user is null, please access from gateway or check user info");
             return false;
         }
+        UserContextHolder.set(user);
         return true;
     }
 

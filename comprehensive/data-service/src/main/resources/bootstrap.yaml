@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: data-service
+  cloud:
+    config:
+      label: master #git分支
+      uri: http://localhost:9090 #server地址
+      profile: dev #配置文件后缀
+      name: config-info #配置文件前缀   那么总的就是 config-info-dev
+server:
+  port: 8099

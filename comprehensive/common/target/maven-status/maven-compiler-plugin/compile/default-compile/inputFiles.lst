@@ -1,0 +1,16 @@
+/Users/ryze/Documents/GitHub/springcloud/comprehensive/common/src/main/java/com/lft/common/context/SpringContextManager.java
+/Users/ryze/Documents/GitHub/springcloud/comprehensive/common/src/main/java/com/lft/common/exception/BaseExceptionBody.java
+/Users/ryze/Documents/GitHub/springcloud/comprehensive/common/src/main/java/com/lft/common/context/HystrixThreadCallable.java
+/Users/ryze/Documents/GitHub/springcloud/comprehensive/common/src/main/java/com/lft/common/util/AuthUtil.java
+/Users/ryze/Documents/GitHub/springcloud/comprehensive/common/src/main/java/com/lft/common/exception/CommonError.java
+/Users/ryze/Documents/GitHub/springcloud/comprehensive/common/src/main/java/com/lft/common/context/HystrixThreadLocal.java
+/Users/ryze/Documents/GitHub/springcloud/comprehensive/common/src/main/java/com/lft/common/util/ExceptionUtil.java
+/Users/ryze/Documents/GitHub/springcloud/comprehensive/common/src/main/java/com/lft/common/intercepter/RestTemplateUserContextInterceptor.java
+/Users/ryze/Documents/GitHub/springcloud/comprehensive/common/src/main/java/com/lft/common/intercepter/FeignUserContextInterceptor.java
+/Users/ryze/Documents/GitHub/springcloud/comprehensive/common/src/main/java/com/lft/common/context/SpringCloudHystrixConcurrencyStrategy.java
+/Users/ryze/Documents/GitHub/springcloud/comprehensive/common/src/main/java/com/lft/common/exception/BaseException.java
+/Users/ryze/Documents/GitHub/springcloud/comprehensive/common/src/main/java/com/lft/common/context/UserContextHolder.java
+/Users/ryze/Documents/GitHub/springcloud/comprehensive/common/src/main/java/com/lft/common/intercepter/UserContextInterceptor.java
+/Users/ryze/Documents/GitHub/springcloud/comprehensive/common/src/main/java/com/lft/common/util/HttpConvertUtil.java
+/Users/ryze/Documents/GitHub/springcloud/comprehensive/common/src/main/java/com/lft/common/vo/User.java
+/Users/ryze/Documents/GitHub/springcloud/comprehensive/common/src/main/java/com/lft/common/config/CommonConfiguration.java

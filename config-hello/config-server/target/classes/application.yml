@@ -5,7 +5,7 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/RyzeUserName/springcloud.git
-          search-paths: config-info
+          uri: https://github.com/RyzeUserName/springcloud
+          search-paths: config
   application:
     name: config-server

@@ -6,6 +6,6 @@ spring:
       server:
         git:
           uri: https://github.com/RyzeUserName/springcloud
-          search-paths: CONFIG
+          search-paths: CONFIG-BOOK
   application:
     name: config-server

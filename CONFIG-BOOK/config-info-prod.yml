@@ -1,4 +1,0 @@
-cn: 
- springcloud: 
-          book: 
-            config: I am the git configuration file from prod environment. I will edit it. 1111111

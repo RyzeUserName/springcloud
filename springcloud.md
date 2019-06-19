@@ -1635,11 +1635,19 @@ FilterRegistry 可以看作是 FilterLoader  与外界交互的媒介，可条�
 
 ### 	2.概述
 
+​	统一管理配置文件
+
 ### 	3.入门案例
+
+​	config-hello   config-server  config-client
 
 ### 	4.刷新配置中心
 
+​	config-hello   config-server-refresh  config-client-refresh
+
 ### 	5.结合springbus
+
+​	config-bus
 
 ### 	6.git
 

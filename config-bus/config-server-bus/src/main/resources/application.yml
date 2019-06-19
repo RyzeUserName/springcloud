@@ -1,0 +1,27 @@
+server:
+  port: 9090
+spring:
+  application:
+    name: config-server-bus
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://gitee.com/zhongzunfa/spring-cloud-config.git
+          search-paths: SC-BOOK-CONFIG
+    bus:
+      trace:
+        enabled: true
+  rabbitmq:
+    host: 192.168.42.128
+    port: 5672
+    username: admin
+    password: 123456
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always

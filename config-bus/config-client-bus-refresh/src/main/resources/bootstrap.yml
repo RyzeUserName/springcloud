@@ -1,0 +1,7 @@
+spring:
+  cloud:
+    config:
+      label: master
+      uri: http://localgost:9090
+      name: config-info
+      profile: dev

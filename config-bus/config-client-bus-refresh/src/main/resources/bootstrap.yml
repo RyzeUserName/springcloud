@@ -2,6 +2,6 @@ spring:
   cloud:
     config:
       label: master
-      uri: http://localgost:9090
+      uri: http://localhost:9090
       name: config-info
       profile: dev

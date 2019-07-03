@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: config-client-multiple
+server:
+  port: 9096

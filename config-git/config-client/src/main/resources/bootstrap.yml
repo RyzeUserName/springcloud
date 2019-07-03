@@ -1,0 +1,7 @@
+spring:
+  cloud:
+    config:
+      label: master
+      uri: http://localhost:9090
+      name: springcloud   # 默认配置文件名称 就是这个
+      profile: dev

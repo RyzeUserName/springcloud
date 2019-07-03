@@ -1,0 +1,19 @@
+server:
+  port: 9091
+spring:
+  application:
+    name: config-server-multiple
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://gitee.com/lifutian/spring-cloud-config
+          search-paths: BOOK
+          repos:
+            simple: https://gitee.com/lifutian/simple
+            speclial:
+              pattern: speclial*/dev*,*speclial*/dev*
+              uri: https://gitee.com/lifutian/spring-cloud-config-special
+            local:
+              pattern: local*
+              uri: E:/study/springcloud/local-config

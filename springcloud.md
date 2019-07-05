@@ -1657,7 +1657,9 @@ FilterRegistry 可以看作是 FilterLoader  与外界交互的媒介，可条�
 
 ### 	6.git
 
-​	
+- `{application}`, which maps to `spring.application.name` on the client side.
+- `{profile}`, which maps to `spring.profiles.active` on the client (comma-separated list).
+- `{label}`, which is a server side feature labelling a "versioned" set of config files.
 
 ### 	7.数据库
 

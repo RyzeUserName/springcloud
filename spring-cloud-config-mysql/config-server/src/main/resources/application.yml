@@ -1,0 +1,23 @@
+server:
+  port: 9090
+spring:
+  application:
+    name: config-mysql
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1/spring-cloud?useSSL=false&serverTimezone = GMT&useUnicode=true&characterEncoding=UTF-8
+    username: root
+    password: root
+  cloud:
+    config:
+      server:
+        jdbc:
+          sql: SELECT `KEY`, `VALUE` from PROPERTIES where APPLICATION=? and PROFILE=? and LABEL=?
+    refresh:
+      refreshable: none
+  profiles:
+    active: jdbc
+logging:
+  level:
+    org.springframework.jdbc.core: debug
+    org.springframework.jdbc.core.StatementCreatorUtils: debug

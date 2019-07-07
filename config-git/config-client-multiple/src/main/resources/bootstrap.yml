@@ -3,6 +3,8 @@ spring:
     config:
       label: master
       uri: http://localhost:9091
-      name: spring-cloud-config   # 默认配置文件名称 就是这个
-      profile: dev
-
+      name: spring-cloud-config   # application-profile-label
+      profile: simple
+logging:
+  level:
+    root: debug

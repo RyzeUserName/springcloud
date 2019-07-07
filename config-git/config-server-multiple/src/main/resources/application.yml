@@ -7,13 +7,26 @@ spring:
     config:
       server:
         git:
-          uri: https://gitee.com/lifutian/spring-cloud-config
-          search-paths: BOOK
+#          uri: https://gitee.com/lifutian/spring-cloud-config
+#          search-paths: BOOK
+#          repos:
+#            simple: https://gitee.com/lifutian/spring-cloud-config-simple
+#            speclial:
+#              pattern: speclial*/dev*,*speclial*/dev*
+#              uri: https://gitee.com/lifutian/spring-cloud-config-special
+#            local:
+#              pattern: local*
+#              uri: E:/study/springcloud/local-config
+          uri: https://gitee.com/zhongzunfa/spring-cloud-config
+          search-paths: SC-BOOK-CONFIG
           repos:
-            simple: https://gitee.com/lifutian/simple
-            speclial:
-              pattern: speclial*/dev*,*speclial*/dev*
-              uri: https://gitee.com/lifutian/spring-cloud-config-special
+            simple: https://gitee.com/zhongzunfa/simple
+            special:
+              pattern: special*/dev*,*special*/dev*
+              uri: https://gitee.com/zhongzunfa/spring-cloud-config-special
             local:
               pattern: local*
-              uri: E:/study/springcloud/local-config
+              uri: /Users/zhongzunfa/all_test/spring-cloud-config
+logging:
+    level:
+      root: debug

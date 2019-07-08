@@ -1667,11 +1667,33 @@ FilterRegistry 可以看作是 FilterLoader  与外界交互的媒介，可条�
 
 ### 	8.nosql
 
+​	mongodb
+
 ### 	9.使用技能
+
+有时候需要使用当前系统环境变量或者应用本身设置的参数而不是使用远程拉取的参数，可以根据
+
+spring.cloud.config.allowOverride =true  
+
+spring.cloud.config.overrideNone = true # 当allowOverride也是true 外部配置优先级更低，而且不会覆盖本地属性
+
+spring.cloud.config.overrideSystemProperties = false #用来标识外部赔指数型能否覆盖系统属性，默认是true
 
 ### 	10.功能拓展
 
-### 	11.apollo
+​	1.刷新
+
+​	2.回退
+
+​	3.安全认证机制JWT
+
+### 11.高可用
+
+​	1.客户端高可用
+
+​	2.服务端高可用
+
+### 	12.apollo
 
 ## 	2.consul
 

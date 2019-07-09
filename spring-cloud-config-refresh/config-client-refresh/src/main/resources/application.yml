@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: config-client-refresh
+  cloud:
+    config:
+      refreshInterval: 60
+  security:
+    user:
+      name: user
+      password: 123456
+server:
+  port: 9012

@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: config-client-back
+server:
+  port: 9012

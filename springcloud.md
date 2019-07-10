@@ -1687,6 +1687,8 @@ spring.cloud.config.overrideSystemProperties = false #用来标识外部赔指�
 
 ​	2.回退
 
+​		在网络波动/中断的情况下是用本地缓存，只需要指定本地缓存位置即可
+
 ​	3.安全认证机制JWT
 
 ### 11.高可用

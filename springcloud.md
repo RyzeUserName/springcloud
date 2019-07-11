@@ -1691,11 +1691,21 @@ spring.cloud.config.overrideSystemProperties = false #用来标识外部赔指�
 
 ​	3.安全认证机制JWT
 
+​		1.客户端向服务器的授权的controller 请求授权 
+
+​		2.服务端返回JWT token
+
+​		3.客户端调用服务端的服务时，需要带上jwt
+
 ### 11.高可用
 
 ​	1.客户端高可用
 
+​		 减少对服务端的依赖，运用本地缓存，服务端宕掉，启用本地缓存
+
 ​	2.服务端高可用
+
+​		结合eureka的高可用
 
 ### 	12.apollo
 

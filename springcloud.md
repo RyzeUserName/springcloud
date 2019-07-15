@@ -1709,6 +1709,20 @@ spring.cloud.config.overrideSystemProperties = false #用来标识外部赔指�
 
 ### 	12.apollo
 
+​	1.apollp简介
+
+​		携程架构部研发的开源配置管理中心，集中化管理应用不同环境，不同集群的配置。
+
+​		支持四个维度管理，k-v格式管理 ,application(应用)，environment（环境），
+
+​		cluster（集群），namespace（命名空间）
+
+​	   2.  apollo 功能 
+
+​	        统一管理，实时生效，版本发布，灰度发布，权限管理，发布审核，操作审计，
+
+​		客户端配置信息监控， 提供java和.net原生客户端，提供开放平台api，部署简单			
+
 ## 	2.consul
 
 ## 	3.全链路监控

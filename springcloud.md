@@ -1721,7 +1721,33 @@ spring.cloud.config.overrideSystemProperties = false #用来标识外部赔指�
 
 ​	        统一管理，实时生效，版本发布，灰度发布，权限管理，发布审核，操作审计，
 
-​		客户端配置信息监控， 提供java和.net原生客户端，提供开放平台api，部署简单			
+​		客户端配置信息监控， 提供java和.net原生客户端，提供开放平台api，部署简单
+
+​	 3.apollo总体架构模块
+
+​					![apollo](E:\study\springcloud\assets\apollo-1563243034014.jpg)
+
+​		4.客户端设计
+
+​			客户端和服务端保持一个长连接，从而能第一次时间获取配置更新推送
+
+​			客户端还会定时主动从apollo配置服务中心拉取最新配置
+
+​			定时頻率为每5分钟拉取一次，客户端可指定运行时Sysytem Property: apollo.refreshInterval 来覆盖 单位是分钟
+
+​			客户端拉取到的最新配置，内存一份，本地一份（回退）
+
+​		5.环境
+
+​				1.-Denv= xxx   
+
+​				2. 操作系统的ENV													
+
+​				3. 配置文件指定 env=xx  
+
+​		6.集合spring cloud
+
+​				
 
 ## 	2.consul
 

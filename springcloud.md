@@ -1747,9 +1747,43 @@ spring.cloud.config.overrideSystemProperties = false #用来标识外部赔指�
 
 ​		6.集合spring cloud
 
-​				
+​				https://github.com/ctripcorp/apollo
 
 ## 	2.consul
+
+### 	１.consul介绍
+
+​			consul是一个分布式高可用的服务网格解决方案，提供包括服务发现，配置和分段功能的在内的全功能控制平面，
+
+​			**与Eureka的核心功能一样，但是略有不同**
+
+​					1.go 语言编写，以http方式对外提供服务
+
+​					2.支持多数据中心
+
+​					3.除了服务发现，还有别的功能
+
+​					4.一致性的协议是Raft
+
+​			**功能：**
+
+​					1.服务发现 http/DNS 服务发现
+
+​					2.健康检查
+
+​					3.简单的k/v 存储（动态配置，特殊标记，协调，leader选举）
+
+​		 **安装：**
+
+​				
+
+​							
+
+### 	 2.consul深入
+
+### 	 3.consul 功能重写 
+
+### 	4.常见问题	
 
 ## 	3.全链路监控
 

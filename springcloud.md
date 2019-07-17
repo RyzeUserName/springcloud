@@ -1773,7 +1773,13 @@ spring.cloud.config.overrideSystemProperties = false #用来标识外部赔指�
 
 ​					3.简单的k/v 存储（动态配置，特殊标记，协调，leader选举）
 
-​		 **安装：**
+​		 	**安装：**
+
+​				https://www.consul.io/downloads.html 下载
+
+​				丰富的 api 和http接口
+
+​					consul agent -dev -client 0.0.0.0 -ui
 
 ​				
 

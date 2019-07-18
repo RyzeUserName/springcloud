@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: consul-register
+  cloud:
+    consul:
+      host: 192.168.42.128
+      port: 8500
+      discovery:
+        prefer-ip-address: true
+        ip-address: 192.168.0.10
+        port: 8080
+        health-check-interval: 20s
+        health-check-path: /health
+        tags: ${LANG:ff},test
+        scheme: http
+

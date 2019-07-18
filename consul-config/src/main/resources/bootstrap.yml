@@ -1,0 +1,31 @@
+spring:
+  application:
+    name: consul-config
+  cloud:
+    consul:
+      host: 192.168.42.128
+      port: 8500
+      config:
+        format: yaml
+        prefix: configuration #配置文件陌路
+        default-context: app #configuration 目录下的文件文件名 默认是application
+        profile-separator: ':' #profiles配置分隔符，默认','
+        data-key: data #指定key 默认时候data
+        # key  configuration/consul-config:dev/data
+        # value=
+        # foo:
+        #   bar:
+        #    name: scbook-dev
+        # server:
+        #   port:8082
+
+
+
+
+        # key  configuration/consul-config:test/data
+        # value=
+        # foo:
+        #   bar:
+        #    name: scbook-test
+        # server:
+        #   port:8082

@@ -1,0 +1,9 @@
+server:
+  port: 8082
+spring:
+  application:
+    name: consul-consumer
+  cloud:
+    consul:
+      host: 192.168.42.128
+      port: 8500

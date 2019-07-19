@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: consul-override-consumer
+  cloud:
+    consul:
+      host: 192.168.42.128
+      port: 8500
+      discovery:
+        server-list-query-tags:
+          consul-provider-tag: tag1
+server:
+  port: 8085

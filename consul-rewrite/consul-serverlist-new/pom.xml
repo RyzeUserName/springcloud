@@ -9,9 +9,9 @@
         <relativePath>../pom.xml</relativePath> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.example</groupId>
-    <artifactId>consul-override-consumer</artifactId>
+    <artifactId>consul-serverlist-new</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>consul-override-consumer</name>
+    <name>consul-serverlist-new</name>
     <description>Demo project for Spring Boot</description>
 
 

@@ -9,17 +9,13 @@
         <relativePath>../pom.xml</relativePath> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.example</groupId>
-    <artifactId>consul-override-consumer</artifactId>
+    <artifactId>consul-provider-tag-3</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>consul-override-consumer</name>
+    <name>consul-provider-tag-3</name>
     <description>Demo project for Spring Boot</description>
 
 
     <dependencies>
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-openfeign</artifactId>
-        </dependency>
     </dependencies>
 
     <build>

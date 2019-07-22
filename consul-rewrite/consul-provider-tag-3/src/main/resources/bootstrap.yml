@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: consul-provider-tag-3
+  cloud:
+    consul:
+      host: 192.168.42.128
+      port: 8500
+      discovery:
+        prefer-ip-address: true
+server:
+  port: 8086

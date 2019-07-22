@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: consul-serverlist-new
+  cloud:
+    consul:
+      host: 192.168.42.128
+      port: 8500
+      ribbon:
+        enabled: false
+server:
+  port: 8089

@@ -1880,7 +1880,55 @@ spring.cloud.config.overrideSystemProperties = false #用来标识外部赔指�
 
 ​			spring cloud gateway+ jwt+ 服务间的鉴权实现
 
+​			注意：gateway 不需要spring-boot-web 的jar，否则会报错
+
 ## 	4.全链路监控
+
+### 	1.概述
+
+​		微服务架构下，服务按照不同维度进行拆分，一次请求可能会涉及多个服务，并且有可能是用不同团队开发，可能使用不同的编程语言实现，有可能在几千台服务器上，横跨多个不同数据中心，因此就需要一些帮助理解系统行为、用于分析性能问题的工具，以便发生故障的时候，能快速定位和解决问题。
+
+​		Dapper论文提到实现一个分布式跟踪系统提出如下需求
+
+​		1.性能低损耗，尽可能做到忽略不计
+
+​		2.对应用透明，尽可能采用非入侵方式
+
+​		3.可伸缩性，随着集群规模扩大而不至瘫痪
+
+​		4.跟踪数据可视化和迅速反馈，可视界面，展现迅速，异常处理迅速
+
+​		5.持续监控
+
+### 	2.Sleuth基本
+
+​		通过Trace 定义一次业务调用链。结合了Brave和Zipkin	
+
+​		1.Sleuth 对Feign的支持
+
+​			TracingFeignClient 类 实现了Feign接口， 在执行 http调用前，在header中添加Span信息
+
+​		2.Sleuth 对RestTemplate的支持
+
+​			RestTemplate 不能是临时注册的，而是初始化过的。这样拦截器才会被注册进去
+
+​			经过拦截器处理，添加Span信息
+
+​		3.Sleuth 对多线程的支持
+
+​			使用LazyTraceExecutor TraceableExecutorService TraceableScheduledExecutorServices ,而不是说使用自初始
+
+​			化的线程池
+
+### 	3.Sleuth深入
+
+### 	4.SkyWalking
+
+### 	5.SkyWalking实战
+
+### 	6.Pinpoint
+
+### 	7.Pinpoint实战
 
 ## 	5.Gateway
 

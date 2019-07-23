@@ -1922,6 +1922,12 @@ spring.cloud.config.overrideSystemProperties = false #用来标识外部赔指�
 
 ### 	3.Sleuth深入
 
+​	Sleuth对http的处理，是通过Filter,Sleuth通过Brave的TracingFilter达到获取Span的目的，创建的自定义Filter优先级要
+
+低于TracingFilter，否则无法拿到TracingFilter 处理之后的信息
+
+​	Baggage是存储在Span的上下文中的一组K/V结构数据，并不是Span必须的数据
+
 ### 	4.SkyWalking
 
 ### 	5.SkyWalking实战

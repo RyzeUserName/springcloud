@@ -1972,9 +1972,39 @@ spring.cloud.config.overrideSystemProperties = false #用来标识外部赔指�
 
 ### 	5.SkyWalking实战
 
-​	
+​	最新版的好用
 
 ### 	6.Pinpoint
+
+​	**特点：**
+
+​		分布式事务跟踪，跟踪跨分布式应用的消息
+
+​		自动监测应用拓扑，帮助你搞清楚应用的架构
+
+​		水平扩展以便支持发规模服务器集群
+
+​		提供代码级别的可见性以便轻松定位是失败点和瓶颈
+
+​		使用字节码增强技术，添加新功能而无修改代码
+
+​	**优点：**
+
+​		非入侵式
+
+​		资源消耗小
+
+​	**架构：**
+
+​		HBase （存储）
+
+​		Pinpoint Collector（部署在Web 容器上）
+
+​		Pinpoint Web（部署在Web 容器上）
+
+​		Pinpoint Agent（附加到用于分析的java应用程序）
+
+​		
 
 ### 	7.Pinpoint实战
 

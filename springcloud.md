@@ -2010,6 +2010,30 @@ spring.cloud.config.overrideSystemProperties = false #用来标识外部赔指�
 
 ## 	5.Gateway
 
+### 	1.概述
+
+​	基于spring 5.0  springboot 2.0 和Project Reactor等技术开发的网关，替代Netflix Zuul
+
+​	![](.\assets\gateway.jpg)
+
+### 	2.工作原理![](.\assets\gateway原理.jpg)
+
+​	
+
+### 	3.入门
+
+### 	4.路由断言
+
+### 	5.内置Filter
+
+### 	6.基于服务发现的路由规则
+
+### 	7.Gateway Filter 和Global Filter
+
+### 	8.实战
+
+### 	9.源码
+
 # 3.解决方案
 
 ## 	1.与gRpc

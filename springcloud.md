@@ -2026,6 +2026,10 @@ spring.cloud.config.overrideSystemProperties = false #用来标识外部赔指�
 
 ### 	5.内置Filter
 
+​	过滤器的实现将近有二十几个，大致分成7类，Header、Parameter、
+
+Path、Status、Redirect跳转、Hystrix熔断、RateLimiter
+
 ### 	6.基于服务发现的路由规则
 
 ### 	7.Gateway Filter 和Global Filter

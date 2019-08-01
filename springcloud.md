@@ -2032,6 +2032,14 @@ Path、Status、Redirect跳转、Hystrix熔断、RateLimiter
 
 ### 	6.基于服务发现的路由规则
 
+​	类似于Zuul 的规则，但是getway适用不同注册中心会有些差距：
+
+​		Eureka  serviceId 默认大写
+
+​		Zookeeper serviceId 默认小写
+
+​		Consul serviceId 默认小写
+
 ### 	7.Gateway Filter 和Global Filter
 
 ### 	8.实战

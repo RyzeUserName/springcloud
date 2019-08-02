@@ -1,0 +1,32 @@
+spring:
+  application:
+    name: gateway
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true #与服务发现组合使用
+          lowerCaseServiceId: true #服务id小写
+
+server:
+  port: 9000  #网关服务监听 9000 端口
+  ssl:
+    key-alias: spring
+    enabled: true
+    key-password: spring
+    key-store: classpath:selfsigned.jks
+    key-store-type: JKS
+    key-store-password: spring
+    key-store-provider: SUN
+
+eureka:
+  client:
+    service-url: #指定注册中心的地址，以便使用服务发现功能
+      defaultZone: http://localhost:8761/eureka/
+
+logging:
+  level:
+    org.springframework.cloud.gateway: TRACE
+    org.springframework.http.server.reactive: DEBUG
+    org.springframework.web.reactive: DEBUG
+    reactor.ipc.netty: DEBUG

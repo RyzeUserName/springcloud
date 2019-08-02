@@ -2042,7 +2042,17 @@ Path、Status、Redirect跳转、Hystrix熔断、RateLimiter
 
 ### 	7.Gateway Filter 和Global Filter
 
+​	Gateway Filter 是从Web Filter中复制过来的，相当与一个Filter过滤器，可以访问的url过滤，进行切面处理，应用场景 
+
+超时、安全等，应用于单个路由 或者 一个分组的路由上
+
+​	Global Filter 全局的filter 用于全部路由
+
+​	gateway 是基于webflux 和swagger不兼容的
+
 ### 	8.实战
+
+​	
 
 ### 	9.源码
 

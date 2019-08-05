@@ -2056,9 +2056,49 @@ Path、Status、Redirect跳转、Hystrix熔断、RateLimiter
 
 ### 	9.源码
 
+### 	![](.\assets\gateway原理.jpg)
+
+
+
+1. 组装上下文
+
+   ![1564972907812](.\assets\1564972907812.png)
+
+
+
+​		![1564973215270](.\assets\1564973215270.png)
+
+  2. DispatcherHandler 源码
+
+     
+
+
+
+![1564974806380](.\assets\1564974806380.png)
+
+![1564976079404](.\assets\1564976079404.png)
+
+3.FilteringWebHandler
+
+![1564990728397](.\assets\1564990728397.png)
+
 # 3.解决方案
 
 ## 	1.与gRpc
+
+### 	1.为什么需要grpc
+
+​		内部调用http性能低下，而grpc
+
+​		1.采用Proto Buffer 序列化，比JSON序列化高效
+
+​		2.grpc采用http2 协议，头部信息压缩，连接复用，减少tcp连接次数
+
+​		3.grpc 采用netty最为IO处理框架
+
+### 	2.grpc简介
+
+​	 跨语言的rpc框架
 
 ## 	2.版本控制与灰度发布
 

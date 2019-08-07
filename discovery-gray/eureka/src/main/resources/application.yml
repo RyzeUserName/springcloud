@@ -1,0 +1,18 @@
+
+spring:
+  application:
+    name: discovery-springcloud-example-eureka
+server:
+  port: 8888
+
+eureka:
+  instance:
+    prefer-ip-address: true
+    hostname: localhost
+    metadata-map:
+      group: example-eureka-group
+  client:
+    fetch-registry: false
+    register-with-eureka: false
+    service-url:
+      defaultZone: http://localhost:8888/eureka/

@@ -1,0 +1,41 @@
+spring:
+  application:
+    name: atomikos-jta
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  jta:
+    enabled: true
+    atomikos:
+      datasource:
+       order:
+         xa-data-source-class-name: com.mysql.jdbc.jdbc2.optional.MysqlXADataSource
+         xa-properties.url: jdbc:mysql://localhost:3306/order?useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&transformedBitIsBoolean=true&allowMultiQueries=true&useSSL=false
+         xa-properties.user: root
+         xa-properties.password: root
+         unique-resource-name: order
+         max-lifetime: 10000
+         borrow-connection-timeout: 10000
+         max-pool-size: 10
+         min-pool-size: 1
+       log:
+         xa-data-source-class-name: com.mysql.jdbc.jdbc2.optional.MysqlXADataSource
+         xa-properties.url: jdbc:mysql://localhost:3306/log?useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&transformedBitIsBoolean=true&allowMultiQueries=true&useSSL=false
+         xa-properties.user: root
+         xa-properties.password: root
+         unique-resource-name: log
+         max-lifetime: 10000
+         borrow-connection-timeout: 10000
+         max-pool-size: 10
+         min-pool-size: 1
+#druid:
+#  initialSize: 5
+#  minIdle: 5
+#  maxActive: 100
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
